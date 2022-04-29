@@ -12,7 +12,7 @@ not-a-true-result
 insufficient-information
 issues-with-replication
 solutions-to-irreproducibility
-getting-it-right
+the-right-stuff
 making-reproducing-easy
 exercise
 key-points
