@@ -4,8 +4,98 @@
 
 ## Objectives
 :::objectives
-Objectives
+* Understand the importance of reproducibility in the scientific method
+* Explore practical ways to aid reproducibility
 :::
+
+## Purpose and aim
+Reproducibility of experiments is an important part of the scientific method. It goes all the way back to the 17th century, when the Irish chemist Robert Boyle was studying the concept of vacuum - a rather controversial topic at the time.
+
+Boyle argued that facts will emerge when an experiment is repeated over and over again - with consistent outcomes, presumably.
+
+Here we are looking at various causes of irreproducibility and, importantly, we look at how we can avoid this happening in the first place.
+
+## Causes of irreproducibility
+
+### Not a true result
+
+* Publication Bias
+
+This happens because the research community tends to favour publishing statistically significant results. It's generally more difficult to publish non-significant results, even if the experimental design, data collection and subsequent analysis are sound.
+
+* HARKing
+
+This is Hypothesising After the Results are Known. What happens is that researchers gather data, do an analysis and then formulate a hypothesis based on these data.
+
+* p-Hacking / selective reporting
+
+This occurs when researchers perform multiple statistical analyses on their data and then report the ones that produce statistically significant results.
+
+* Low statistical power
+
+Here a statistically significant result may be found, but the power of the analysis may be low. If there is low statistical power, then the likelihood of a statistical test detecting a true effect when there is one, is low.
+
+* Faulty data analysis
+
+This happens. A lot. We're only human - there are many reasons why this can occur, for example poor practice (sorting the wrong column in Excel), lack of knowledge, errors in code etc.
+
+* Poor experimental design
+
+The outcome of an experiment can only be robust if there is a decent experimental design. Problems with experimental design can include low subject numbers (leading to poor statistical power), lack of controls, inaccurate measurements, measuring the wrong thing etc.
+
+* Fraud
+
+This is what people often think of when it comes to irreproducible research. Hopefully it is less common than it may seem to be. In a way there is probably a bias towards reporting cases of fraud, as opposed to genuine mistakes by researchers. A lot of the causes we covered above can actually contribute to a researcher committing fraud. Academic pressures are real and the need to publish, preferably in high-impact journals, can definitely contribute to this.
+
+* Bad luck
+
+A tough one. You can have the best experimental design in the world, multiple replicates, high sample sizes, good statistical power but... you're just plain unlucky and you picked up a result that others cannot reproduce.
+
+### Insufficient information
+
+* Data unavailable
+
+I hate it when this happens. It reduces a scientific article to "you just have to take my word for it". It is not just the researchers who are to blame here - editors and journals should insist on data being available.
+
+* Methods unavailable / not clear
+
+Unavailable methods are unnecessary, this can be picked up at the review stage. Unclear methods are a bit trickier because what may be blatantly obvious to the original researcher, might be vague to others.
+
+* Code unavailable
+
+Again, unnecessary. Editors, reviewers and journals should insist on this. It could be that there is no code, because the analysis was done in Excel for example. Although that is far from ideal, then at least the spreadsheet should be available for others to check.
+
+### Issues with replication
+
+* Poor reproduction methods
+
+This is often linked to unclear methods. You can't reproduce something if it isn't clear how the experiment was done in the first place! Other issues arise when a unique piece of hardware was used to generate the data (not everyone has a hadron collider under their lawn), but there independent researchers could use the same machinery. Or perhaps the work is extremely fiddly and requires a lot of skill and knowledge, that other researcher may not have.
+
+* Variability in standard reagents
+
+One of many variables in an experimental setup that can cause havoc. 
+
+## Solutions to irreproducibility
+
+### Getting it right
+
+* Ethical integrity. Don't go into science if you don't care about this.
+
+* Have the right knowledge: make sure you have sufficient understanding of statistics and experimental design to perform and analyse your experiment properly. If you don't, then educate yourself or collaborate with somebody who can assist in the areas where your knowledge is lacking.
+
+* Better oversight: this should happen at every level. Group leaders, editors, reviewers, colleagues, research assistants etc all play a role in getting from an idea to a published result. At each stage there is opportunity to reflect and ask if what is being done happens correctly.
+
+* Better data management: Be organised. Be transparent. Use non-proprietary data formats. Make data freely available.
+
+### Making reproducing easy
+
+* Organisation
+
+* Documentation
+
+* Automation
+
+* Publication
 
 ## Exercise
 :::exercise

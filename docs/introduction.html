@@ -5,14 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Chapter 2 Introduction | Reproducibility without fuss</title>
 <meta name="author" content="Martin van Rongen">
-<meta name="description" content="2.1 Objectives  Objectives   2.2 Exercise  Exercise 2.1 Download the data for this course and look at the data/forensic-science folder. Try to answer the following questions: Look through the...">
+<meta name="description" content="2.1 Objectives  Understand the importance of reproducibility in the scientific method Explore practical ways to aid reproducibility   2.2 Purpose and aim Reproducibility of experiments is an...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="Chapter 2 Introduction | Reproducibility without fuss">
 <meta property="og:type" content="book">
-<meta property="og:description" content="2.1 Objectives  Objectives   2.2 Exercise  Exercise 2.1 Download the data for this course and look at the data/forensic-science folder. Try to answer the following questions: Look through the...">
+<meta property="og:description" content="2.1 Objectives  Understand the importance of reproducibility in the scientific method Explore practical ways to aid reproducibility   2.2 Purpose and aim Reproducibility of experiments is an...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 2 Introduction | Reproducibility without fuss">
-<meta name="twitter:description" content="2.1 Objectives  Objectives   2.2 Exercise  Exercise 2.1 Download the data for this course and look at the data/forensic-science folder. Try to answer the following questions: Look through the...">
+<meta name="twitter:description" content="2.1 Objectives  Understand the importance of reproducibility in the scientific method Explore practical ways to aid reproducibility   2.2 Purpose and aim Reproducibility of experiments is an...">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references --><link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -360,12 +360,122 @@
 <span class="header-section-number">2.1</span> Objectives<a class="anchor" aria-label="anchor" href="#objectives"><i class="fas fa-link"></i></a>
 </h2>
 <div class="objectives">
-<p>Objectives</p>
+<ul>
+<li>Understand the importance of reproducibility in the scientific method</li>
+<li>Explore practical ways to aid reproducibility</li>
+</ul>
 </div>
 </div>
-<div id="exercise" class="section level2" number="2.2">
+<div id="purpose-and-aim" class="section level2" number="2.2">
 <h2>
-<span class="header-section-number">2.2</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.2</span> Purpose and aim<a class="anchor" aria-label="anchor" href="#purpose-and-aim"><i class="fas fa-link"></i></a>
+</h2>
+<p>Reproducibility of experiments is an important part of the scientific method. It goes all the way back to the 17th century, when the Irish chemist Robert Boyle was studying the concept of vacuum - a rather controversial topic at the time.</p>
+<p>Boyle argued that facts will emerge when an experiment is repeated over and over again - with consistent outcomes, presumably.</p>
+<p>Here we are looking at various causes of irreproducibility and, importantly, we look at how we can avoid this happening in the first place.</p>
+</div>
+<div id="causes-of-irreproducibility" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Causes of irreproducibility<a class="anchor" aria-label="anchor" href="#causes-of-irreproducibility"><i class="fas fa-link"></i></a>
+</h2>
+<div id="not-a-true-result" class="section level3" number="2.3.1">
+<h3>
+<span class="header-section-number">2.3.1</span> Not a true result<a class="anchor" aria-label="anchor" href="#not-a-true-result"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Publication Bias</li>
+</ul>
+<p>This happens because the research community tends to favour publishing statistically significant results. It’s generally more difficult to publish non-significant results, even if the experimental design, data collection and subsequent analysis are sound.</p>
+<ul>
+<li>HARKing</li>
+</ul>
+<p>This is Hypothesising After the Results are Known. What happens is that researchers gather data, do an analysis and then formulate a hypothesis based on these data.</p>
+<ul>
+<li>p-Hacking / selective reporting</li>
+</ul>
+<p>This occurs when researchers perform multiple statistical analyses on their data and then report the ones that produce statistically significant results.</p>
+<ul>
+<li>Low statistical power</li>
+</ul>
+<p>Here a statistically significant result may be found, but the power of the analysis may be low. If there is low statistical power, then the likelihood of a statistical test detecting a true effect when there is one, is low.</p>
+<ul>
+<li>Faulty data analysis</li>
+</ul>
+<p>This happens. A lot. We’re only human - there are many reasons why this can occur, for example poor practice (sorting the wrong column in Excel), lack of knowledge, errors in code etc.</p>
+<ul>
+<li>Poor experimental design</li>
+</ul>
+<p>The outcome of an experiment can only be robust if there is a decent experimental design. Problems with experimental design can include low subject numbers (leading to poor statistical power), lack of controls, inaccurate measurements, measuring the wrong thing etc.</p>
+<ul>
+<li>Fraud</li>
+</ul>
+<p>This is what people often think of when it comes to irreproducible research. Hopefully it is less common than it may seem to be. In a way there is probably a bias towards reporting cases of fraud, as opposed to genuine mistakes by researchers. A lot of the causes we covered above can actually contribute to a researcher committing fraud. Academic pressures are real and the need to publish, preferably in high-impact journals, can definitely contribute to this.</p>
+<ul>
+<li>Bad luck</li>
+</ul>
+<p>A tough one. You can have the best experimental design in the world, multiple replicates, high sample sizes, good statistical power but… you’re just plain unlucky and you picked up a result that others cannot reproduce.</p>
+</div>
+<div id="insufficient-information" class="section level3" number="2.3.2">
+<h3>
+<span class="header-section-number">2.3.2</span> Insufficient information<a class="anchor" aria-label="anchor" href="#insufficient-information"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Data unavailable</li>
+</ul>
+<p>I hate it when this happens. It reduces a scientific article to “you just have to take my word for it.” It is not just the researchers who are to blame here - editors and journals should insist on data being available.</p>
+<ul>
+<li>Methods unavailable / not clear</li>
+</ul>
+<p>Unavailable methods are unnecessary, this can be picked up at the review stage. Unclear methods are a bit trickier because what may be blatantly obvious to the original researcher, might be vague to others.</p>
+<ul>
+<li>Code unavailable</li>
+</ul>
+<p>Again, unnecessary. Editors, reviewers and journals should insist on this. It could be that there is no code, because the analysis was done in Excel for example. Although that is far from ideal, then at least the spreadsheet should be available for others to check.</p>
+</div>
+<div id="issues-with-replication" class="section level3" number="2.3.3">
+<h3>
+<span class="header-section-number">2.3.3</span> Issues with replication<a class="anchor" aria-label="anchor" href="#issues-with-replication"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Poor reproduction methods</li>
+</ul>
+<p>This is often linked to unclear methods. You can’t reproduce something if it isn’t clear how the experiment was done in the first place! Other issues arise when a unique piece of hardware was used to generate the data (not everyone has a hadron collider under their lawn), but there independent researchers could use the same machinery. Or perhaps the work is extremely fiddly and requires a lot of skill and knowledge, that other researcher may not have.</p>
+<ul>
+<li>Variability in standard reagents</li>
+</ul>
+<p>One of many variables in an experimental setup that can cause havoc.</p>
+</div>
+</div>
+<div id="solutions-to-irreproducibility" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Solutions to irreproducibility<a class="anchor" aria-label="anchor" href="#solutions-to-irreproducibility"><i class="fas fa-link"></i></a>
+</h2>
+<div id="getting-it-right" class="section level3" number="2.4.1">
+<h3>
+<span class="header-section-number">2.4.1</span> Getting it right<a class="anchor" aria-label="anchor" href="#getting-it-right"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Ethical integrity. Don’t go into science if you don’t care about this.</p></li>
+<li><p>Have the right knowledge: make sure you have sufficient understanding of statistics and experimental design to perform and analyse your experiment properly. If you don’t, then educate yourself or collaborate with somebody who can assist in the areas where your knowledge is lacking.</p></li>
+<li><p>Better oversight: this should happen at every level. Group leaders, editors, reviewers, colleagues, research assistants etc all play a role in getting from an idea to a published result. At each stage there is opportunity to reflect and ask if what is being done happens correctly.</p></li>
+<li><p>Better data management: Be organised. Be transparent. Use non-proprietary data formats. Make data freely available.</p></li>
+</ul>
+</div>
+<div id="making-reproducing-easy" class="section level3" number="2.4.2">
+<h3>
+<span class="header-section-number">2.4.2</span> Making reproducing easy<a class="anchor" aria-label="anchor" href="#making-reproducing-easy"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li><p>Organisation</p></li>
+<li><p>Documentation</p></li>
+<li><p>Automation</p></li>
+<li><p>Publication</p></li>
+</ul>
+</div>
+</div>
+<div id="exercise" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
 </h2>
 <div class="exercise">
 <p><span id="exr:unlabeled-div-1" class="exercise"><strong>Exercise 2.1  </strong></span>Download the data for this course and look at the <code>data/forensic-science</code> folder. Try to answer the following questions:</p>
@@ -413,9 +523,9 @@ Answer
 </ul></details>
 </div>
 </div>
-<div id="key-points" class="section level2" number="2.3">
+<div id="key-points" class="section level2" number="2.6">
 <h2>
-<span class="header-section-number">2.3</span> Key points<a class="anchor" aria-label="anchor" href="#key-points"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.6</span> Key points<a class="anchor" aria-label="anchor" href="#key-points"><i class="fas fa-link"></i></a>
 </h2>
 <div class="keypoints">
 <p>Adding key points</p>
@@ -431,8 +541,22 @@ Answer
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
 <li><a class="nav-link" href="#objectives"><span class="header-section-number">2.1</span> Objectives</a></li>
-<li><a class="nav-link" href="#exercise"><span class="header-section-number">2.2</span> Exercise</a></li>
-<li><a class="nav-link" href="#key-points"><span class="header-section-number">2.3</span> Key points</a></li>
+<li><a class="nav-link" href="#purpose-and-aim"><span class="header-section-number">2.2</span> Purpose and aim</a></li>
+<li>
+<a class="nav-link" href="#causes-of-irreproducibility"><span class="header-section-number">2.3</span> Causes of irreproducibility</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#not-a-true-result"><span class="header-section-number">2.3.1</span> Not a true result</a></li>
+<li><a class="nav-link" href="#insufficient-information"><span class="header-section-number">2.3.2</span> Insufficient information</a></li>
+<li><a class="nav-link" href="#issues-with-replication"><span class="header-section-number">2.3.3</span> Issues with replication</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#solutions-to-irreproducibility"><span class="header-section-number">2.4</span> Solutions to irreproducibility</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#getting-it-right"><span class="header-section-number">2.4.1</span> Getting it right</a></li>
+<li><a class="nav-link" href="#making-reproducing-easy"><span class="header-section-number">2.4.2</span> Making reproducing easy</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#exercise"><span class="header-section-number">2.5</span> Exercise</a></li>
+<li><a class="nav-link" href="#key-points"><span class="header-section-number">2.6</span> Key points</a></li>
 </ul>
 
       <div class="book-extra">

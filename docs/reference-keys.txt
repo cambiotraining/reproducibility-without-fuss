@@ -6,6 +6,14 @@ overview
 core-aims
 introduction
 objectives
+purpose-and-aim
+causes-of-irreproducibility
+not-a-true-result
+insufficient-information
+issues-with-replication
+solutions-to-irreproducibility
+getting-it-right
+making-reproducing-easy
 exercise
 key-points
 organisation
