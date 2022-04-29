@@ -1,0 +1,15 @@
+book_filename: "Reproducibility without fuss"
+new_session: true
+delete_merged_file: true
+
+rmd_files: [
+  "index.Rmd",
+  "introduction.Rmd",
+  "organisation.Rmd",
+  "documentation.Rmd",
+  "version-control.Rmd",
+]
+
+language:
+  ui:
+    chapter_name: "Chapter "
