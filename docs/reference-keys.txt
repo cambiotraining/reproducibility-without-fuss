@@ -2,8 +2,6 @@ exr:unlabeled-div-1
 exr:unlabeled-div-2
 exr:unlabeled-div-3
 exr:unlabeled-div-4
-overview
-core-aims
 introduction
 objectives
 purpose-and-aim
