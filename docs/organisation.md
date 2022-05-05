@@ -4,7 +4,7 @@
 
 ## Objectives
 :::objectives
-Objectives
+* Consider ways to organise and structure your data and analysis
 :::
 
 
@@ -13,12 +13,57 @@ Objectives
 Use the data from the [forensic science exercise](#forensic-science) to create a folder structure and file naming convention that tidies everything up.
 
 <details><summary>Answer</summary>
-With answers
+A possible directory and file structure could look as follows:
+
+```
+forensic-science
+  |_ `forensic-science.Rproj`
+  |_ data
+    |__ raw
+      |__ `2011-12-01_gapminder_data.xlsx`
+    |__ processed
+      |__ `subset-gapminder_worldregion_oceania.csv`
+      |__ `subset-gapminder_yr1982.csv`
+      |__ `subset-gapminder_country_canada.csv`
+  |_ scripts
+    |__ `fs-lifeyear_canada.R`
+    |__ `fs-lifeyear_oceania.R`
+    |__ `fs-lifeyear_yr1982.R`
+    |__ `fs-figures.R`
+  |_ output
+    |__ documents
+      |__ `manuscript-figure_captions.docx`
+    |__ exploration
+      |__ `fs-lifeyear_canada_1950to2000.png`
+      |__ `fs-lifeyear_canada_2000to2002.png`
+      |__ `fs-lifeyear_netherlands_1950to2010.png`
+    |__ figures
+      |__ `fs-lifeyear_canada_1950to2010.png`
+      |__ `fs-lifeyear_oceania_1950to2010.png`
+      |__ `fs-lifeyear_world_1982.png`
+  |_ misc
+    |__ `data-original_from_matthew.xlsx`
+```
+              
 </details>
+:::
+
+## Exercise: Me, me, me!
+::: exercise
+Now that you've thought about structuring the mess I left you with in the `forensic_science` folder, it's time to put your new, obsessively organised self to work on your own project(s).
+
+I'd like you to take one of your projects (preferably the one you're still storing only on your Desktop...) and make a copy of it.
+
+Using the copy, I want you to reorganise your files into a coherent directory structure. Once you've done that, I need you to have a good look at the filenames. Are they clear? Are they providing information of what's contained in the file? Do the files sort logically?
 :::
 
 ## Key points
 
 :::keypoints
-Adding key points
+* Whatever system you use, make sure you have one!
+* Store files in a logical directory structure
+* Have a `misc`/`stuff` folder to store random stuff in
+* Name your files so they give you information on what they contain
+* Make sure files sort properly by tweaking your file names
+* Be consistent, stick to the system you've chosen!
 :::

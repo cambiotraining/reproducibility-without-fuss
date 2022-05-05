@@ -7,7 +7,7 @@ rmd_files: [
   "introduction.Rmd",
   "organisation.Rmd",
   "documentation.Rmd",
-  "version-control.Rmd",
+  #"version-control.Rmd",
 ]
 
 language:
