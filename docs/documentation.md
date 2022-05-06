@@ -537,6 +537,20 @@ We can then further customise the plot. We can add annotations using `plot_annot
 
 There are more options available, which you can find on the [patchwork website](https://patchwork.data-imaginist.com/index.html).
 
+## Exercise: Writing a short report
+
+::: exercise
+For this exercise I'd like you to create a new R Markdown file, and do the following:
+
+1. Create 3 heading levels, as previously done
+2. Add a table of contents
+3. Using the default `mtcars` data set, create
+  a. a dynamic table
+  b. create 2 plots in ggplot (e.g. scatter plot of `disp` vs `hp`; box plot of `carb` vs `disp`)
+  c. create a two-panel figure in `patchwork`, with a title, caption and panel tag
+  d. `knit` the document and admire your results
+
+:::
 ## R Markdown limitations
 
 Some limitations that R Markdown has:

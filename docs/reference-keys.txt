@@ -2,6 +2,7 @@ exr:unlabeled-div-1
 exr:unlabeled-div-2
 exr:unlabeled-div-3
 exr:unlabeled-div-4
+exr:unlabeled-div-5
 introduction
 objectives
 purpose-and-aim
@@ -50,5 +51,6 @@ dynamic-tables-using-rmarkdown
 dynamic-tables-using-kableextra
 composing-figures-with-patchwork
 adding-plots-together
+exercise-writing-a-short-report
 r-markdown-limitations
 key-points-2
