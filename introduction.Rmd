@@ -124,7 +124,7 @@ A bit of a no-brainer, because this is what most researchers are after anyway. T
 
 ## Exercise: forensic science {#forensic-science}
 :::exercise
-Download the data for this course and look at the `data/forensic-science` folder. Try to answer the following questions:
+Download the [data](https://github.com/cambiotraining/reproducibility-without-fuss/blob/main/data.zip?raw=true) for this course and look at the `data/forensic-science` folder. Try to answer the following questions:
 
 Look through the folder and try to answer the following questions about the project:
 
