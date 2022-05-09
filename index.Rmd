@@ -135,7 +135,7 @@ A bit of a no-brainer, because this is what most researchers are after anyway. T
 
 ## Exercise: forensic science {#forensic-science}
 :::exercise
-Download the data for this course and look at the `data/forensic-science` folder. Try to answer the following questions:
+Download the [data](https://github.com/cambiotraining/reproducibility-without-fuss/blob/main/data.zip?raw=true) for this course and look at the `data/forensic-science` folder. Try to answer the following questions:
 
 Look through the folder and try to answer the following questions about the project:
 
@@ -178,7 +178,7 @@ We have two images: `graph.png`, which seems to show that life expectancy (of wh
 
 :::keypoints
 
-* Reproducibility underpins the scientific method: being able to consistently obtain the same results for an experiments gives weight to the credibility of the outcome.
+* Reproducibility underpins the scientific method: being able to consistently obtain the same results for an experiment gives weight to the credibility of the outcome.
 
 * We can influence reproducibility at every stage of the scientific method, by documenting our hypotheses and thought processes that led to them; by providing clear experimental design guidance and methods; by making our data and data analysis available an interpretable to others and finally, by letting other peer-review our research.
 :::

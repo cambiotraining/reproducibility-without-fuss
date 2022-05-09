@@ -545,10 +545,10 @@ For this exercise I'd like you to create a new R Markdown file, and do the follo
 1. Create 3 heading levels, as previously done
 2. Add a table of contents
 3. Using the default `mtcars` data set, create
-  a. a dynamic table
-  b. create 2 plots in ggplot (e.g. scatter plot of `disp` vs `hp`; box plot of `carb` vs `disp`)
-  c. create a two-panel figure in `patchwork`, with a title, caption and panel tag
-  d. `knit` the document and admire your results
+    a. a dynamic table
+    b. create 2 plots in ggplot (e.g. scatter plot of `disp` vs `hp`; box plot of `carb` vs `disp`)
+    c. create a two-panel figure in `patchwork`, with a title, caption and panel tag
+    d. `knit` the document and admire your results
 
 :::
 ## R Markdown limitations
