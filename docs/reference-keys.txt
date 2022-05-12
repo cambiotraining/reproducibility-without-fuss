@@ -6,6 +6,9 @@ exr:unlabeled-div-5
 exr:unlabeled-div-6
 exr:unlabeled-div-7
 exr:unlabeled-div-8
+exr:unlabeled-div-9
+exr:unlabeled-div-10
+exr:unlabeled-div-11
 introduction
 objectives
 purpose-and-aim
@@ -77,4 +80,14 @@ key-points-3
 github-and-rstudio
 objectives-4
 installation-instructions
+using-github-from-rstudio
+linking-git-and-rstudio
+starting-a-new-project-under-git-control
+changes-and-your-remote-repository
+exercise-version-control-in-rstudio
+exercise-branching-and-changes
+exercise-optional-creating-a-pull-request
+forking-projects
+creating-issues
+managing-access
 key-points-4
