@@ -4,7 +4,9 @@
 
 ## Objectives
 :::objectives
-Objectives
+* Understand different ways to deal with versions of data
+* Understand the workflow for Git
+* Know about when branches might be helpful
 :::
 
 ## Introduction
@@ -205,5 +207,8 @@ The variety of phrases used in both types of version control systems can be a li
 ## Key points
 
 :::keypoints
-Adding key points
+* Version control can be centralised on a server, or distributed with a local copy of a repository
+* The git model is distributed, with a local repository that can be linked to an online remote repository
+* GitHub is an online platform for remote repositories, allowing easy sharing of and collaborations on repositories
+* Branches are created if a new feature is being developed or if multiple people are working on the same project at once
 :::

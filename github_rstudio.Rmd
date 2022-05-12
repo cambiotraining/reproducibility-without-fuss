@@ -274,3 +274,5 @@ knitr::include_graphics("img/manage_collaborative_repo.png")
 * You can create new branches from within RStudio
 * Issues can be raised on GitHub to keep track of bugs, improvements and tasks
 :::
+
+# References

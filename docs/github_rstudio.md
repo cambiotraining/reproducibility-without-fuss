@@ -215,3 +215,5 @@ To find repositories where you are a collaborator on you need to go to `Settings
 * You can create new branches from within RStudio
 * Issues can be raised on GitHub to keep track of bugs, improvements and tasks
 :::
+
+# References
