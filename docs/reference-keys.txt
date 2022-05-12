@@ -74,3 +74,7 @@ exercise-branches
 exercise-pull-requests
 glossary
 key-points-3
+github-and-rstudio
+objectives-4
+installation-instructions
+key-points-4

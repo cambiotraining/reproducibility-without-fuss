@@ -8,6 +8,7 @@ rmd_files: [
   "organisation.Rmd",
   "documentation.Rmd",
   "version-control.Rmd",
+  "github_rstudio.Rmd",
 ]
 
 language:
