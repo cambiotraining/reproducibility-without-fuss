@@ -117,86 +117,11 @@ Now we've got a project under version control we can practice what we'll do if w
 5. Push the changes to the remote repository.
 :::
 
-## Exercise (optional): Creating a pull request 
-::: exercise
-This is something we have done previously, but might be helpful to practice again. In this case you're kind of talking to yourself: you've created a repository, added a new branch to introduce a feature and now you are ready to publish that feature to the main repository.
-
-What this does is make update the main repository with the changes you've made in the branch. This bit is again most easily done via the GitHub webpage. So, navigate to your GitHub account and find the repository you're working on...
-
-We start that process by creating a **pull request**. Here you're basically asking yourself to add the feature you've created. How polite! We complete the following steps:
-
-1. Go to your GitHub repository and navigate to the newly created branch
-2. Create a pull request
-3. Merge the pull request with the `master` branch
-4. Congratulate yourself on being a version control Pro!
-
-:::
-
-## Forking projects
-
-So far we have used repositories that we created ourselves. But you might find that you want to add or make changes to a repository that somebody else owns. Or you like their project and want to adapt it to your needs. In that case you need to make a personal copy of that project. This is called **forking**.
-
-To fork a repository you need to navigate to the repository page on the maintainers GitHub account whilst logged into your own account. You then click on the `fork` button. The repository is then copied to your account:
-
-<img src="img/forking_01.png" width="818" />
-
-<img src="img/forking_02.png" width="578" />
-
-The forked repository will show up in your repository list. It will specify that it is a forked repository:
-
-<img src="img/forking_03.png" width="373" />
-
-Once you have forked a repository to your GitHub account you can make changes to it. Good practice is to create a **new branch** in your copy of the repository, so that you do not run the risk of confusing the `master` branch of your copy with the `master` branch of the original repository.
-
-In this case we're adding a new branch called `new_feature`.
-
-After you have created a new branch on your forked copy you can start editing/adding as you like. You do this as you have done before, by **staging** and **committing** changes to your repository.
-
-When you want to suggest incorporating some of these changes into the original repository you will have to open a **pull request**. This works in the same way is described in the [pull requests](#pull-requests) section, but instead of comparing two branches on the same repository, you are comparing the branch on your forked copy with the `master` branch of the original repository.
-
-Your pull request will show up in the original repository. Note that you can also see that the original repository has been forked:
-
-<img src="img/forking_04.png" width="1021" />
-
-## Creating issues
-
-GitHub keeps track of bugs, improvements and tasks through **Issues**. The good thing about issues is that they can be shared and discussed with collaborators, in a similar way as to how the pull request system works.
-
-An issue is created from the `Issues` tab in the repository:
-
-<img src="img/issues_01.png" width="806" />
-
-A new issue requires a title and description. It's good to try and be as concise and complete as possible so that the developer knows what it is that you want. You can label the issue - in this case it is an Enhancement, but there is a whole range of labels you can choose from. Labelling can be particularly helpful when there are many issues and it helps you organise and prioritise your work.
-
-<img src="img/issues_02.png" width="827" />
-
-Issues are always assigned a unique ID, which you can use to refer to them in comments:
-
-<img src="img/issues_03.png" width="819" />
-
-<img src="img/issues_04.png" width="808" />
-
-## Managing access
-
-When you have a public repository everyone can fork the repository and make changes to that (forked) copy. You can also invite people to collaborate on your project.
-
-In order to do that you need to go to the `Settings` > `Manage access` page:
-
-<img src="img/manage_access.png" width="814" />
-
-Here you can invite collaborators and once they have accepted, then can open pull requests and make changes to the repository.
-
-To find repositories where you are a collaborator on you need to go to `Settings` > `Repositories`. Unfortunately these repositories do not show up on your own Repositories tab.
-
-<img src="img/manage_collaborative_repo.png" width="1276" />
-
 ## Key points
 
 :::keypoints
 * You can link repositories to RStudio by cloning them
 * Once cloned and under version control, you can commit and push changes to the remote repository
-* You can create new branches from within RStudio
-* Issues can be raised on GitHub to keep track of bugs, improvements and tasks
 :::
 
 # References

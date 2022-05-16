@@ -344,8 +344,9 @@
 <li><a class="" href="organisation.html"><span class="header-section-number">3</span> Organisation</a></li>
 <li><a class="" href="documentation.html"><span class="header-section-number">4</span> Documentation</a></li>
 <li><a class="active" href="version-control.html"><span class="header-section-number">5</span> Version control</a></li>
-<li><a class="" href="github-and-rstudio.html"><span class="header-section-number">6</span> GitHub and RStudio</a></li>
-<li><a class="" href="references.html"><span class="header-section-number">7</span> References</a></li>
+<li><a class="" href="github-1.html"><span class="header-section-number">6</span> GitHub</a></li>
+<li><a class="" href="github-and-rstudio.html"><span class="header-section-number">7</span> GitHub and RStudio</a></li>
+<li><a class="" href="references.html"><span class="header-section-number">8</span> References</a></li>
 </ul>
 
         <div class="book-extra">
@@ -418,7 +419,7 @@
 <p>If you are working on something by yourself then you’re able to judge whether or not you want to push any changes to your remote repository. Things get a bit more complicated when you are working in a team, because multiple people could work on the same file and the changes you push could affect others. The way GitHub deals with this is through the use of <strong>branches</strong>.</p>
 <p>Simply put, a branch is a copy of your repository where you can safely make changes/experiment without worrying how these changes might affect others.</p>
 <p>There can be many different branches in your repository, but only one can be deployed: the <code>master</code> branch. So if you are making changes and push them to the <code>master</code> branch then they are immediately implemented.</p>
-<p>We will learn how to <a href="version-control.html#create-branch">create branches</a> later.</p>
+<p>We will learn how to <a href="github-1.html#create-branch">create branches</a> later.</p>
 <p>Below is a schematic overview of the process you go through on GitHub.</p>
 <div class="inline-figure"><img src="img/github_workflow.png" width="1014"></div>
 <p>Image adapted from <a href="https://guides.github.com/introduction/flow/">the GitHub guide</a>.</p>
@@ -430,115 +431,15 @@
 <p>When you are using version control, you probably do not want to put every file and folder in your working directory under version control. After all, your working (or project) folder will likely contain binary files, such as text documents or presentations, and data that you want to keep separate.</p>
 <p>Data can take up lots of space and GitHub is not the place to store these files - it really is intended for code. Data associated with publications is usually shared via dedicated data repositories, such as <a href="https://www.repository.cam.ac.uk">Apollo - University of Cambridge Repository</a>.</p>
 <p>But only putting part of the files under version control means that we need to tell git which files to keep track of, or not. It does so with a <code>gitignore</code> file, where we tell git which files to ignore.</p>
-<p>In a little while we’ll be creating our own repository and there you have the option to add a <code>.gitignore</code> file from the start. However, I tend to forego on that, and let RStudio create one once I link a repository to RStudio (more on that later). You can add files and folders to a <code>.gitignore</code> file, and it might look something like this:</p>
+<p>In a little while we’ll be creating our own repository on GitHub and there you have the option to add a <code>.gitignore</code> file from the start. However, I tend to forego on that, and let RStudio create one once I link a repository to RStudio (more on that later). You can add files and folders to a <code>.gitignore</code> file, and it might look something like this:</p>
 <pre><code>.Rproj
 .RData
 data
 documents</code></pre>
 </div>
-<div id="starting-on-github" class="section level2" number="5.8">
+<div id="glossary" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">5.8</span> Starting on GitHub<a class="anchor" aria-label="anchor" href="#starting-on-github"><i class="fas fa-link"></i></a>
-</h2>
-<div id="creating-a-new-repository" class="section level3" number="5.8.1">
-<h3>
-<span class="header-section-number">5.8.1</span> Creating a new repository<a class="anchor" aria-label="anchor" href="#creating-a-new-repository"><i class="fas fa-link"></i></a>
-</h3>
-<p>Start a new repository by navigation to the top right corner on GitHub:</p>
-<div class="inline-figure"><img src="img/new_repo_01.png" width="200"></div>
-<p>This brings up a screen with the following options:</p>
-<ol style="list-style-type: decimal">
-<li>Name of repository you want to create</li>
-<li>A short description of what the repository contains</li>
-<li>Make the repository Public or Private</li>
-<li>Check the <code>Initialize this repository with a README</code> to create a README file (recommended)</li>
-<li>Add a license (any license is better than none, but do look into what restrictions they impose)</li>
-<li>Create the repository</li>
-</ol>
-<div class="inline-figure"><img src="img/new_repo_02.png" width="1414"></div>
-</div>
-<div id="deleting-a-repository" class="section level3" number="5.8.2">
-<h3>
-<span class="header-section-number">5.8.2</span> Deleting a repository<a class="anchor" aria-label="anchor" href="#deleting-a-repository"><i class="fas fa-link"></i></a>
-</h3>
-<p>It happens. Sometimes you might just want to delete a repository, for whatever reason. Nothing to be ashamed of. But useful to know how!</p>
-<p>You go to your repository &gt; <code>Settings</code> then scroll all the way down to the bottom. There you’ll find something called the <strong>Danger Zone</strong>. When you press the <code>Delete this repository</code> button, it’ll ask you to type in the name of the repository, to make absolutely sure that you know that you’re about to delete it. There’s no going back after that, so if you’re not sure you’ll need the code later on - leave it.</p>
-</div>
-<div id="creating-a-new-file-optional" class="section level3" number="5.8.3">
-<h3>
-<span class="header-section-number">5.8.3</span> Creating a new file (optional)<a class="anchor" aria-label="anchor" href="#creating-a-new-file-optional"><i class="fas fa-link"></i></a>
-</h3>
-<p>We can add files directly from the GitHub interface. We’ll do this just to practice, but you’ll be unlikely to use this very often - I generally link a repository to an RStudio project and work that way.</p>
-<p>To create a new file, click on the <code>Create new file</code> button:</p>
-<div class="inline-figure"><img src="img/new_file_01.png" width="819"></div>
-<p>You then have the possibility to create a new file, in this case we are calling it <code>new_file.txt</code>. Note the use of file extensions. A file extension is required!</p>
-<div class="inline-figure"><img src="img/new_file_02.png" width="813"></div>
-<p>To add the file you need to add a <strong>commit message</strong>. A commit message should be a brief description of what you’ve done. You can add more information on <em>how</em> you have done things in the commit description.</p>
-<p>Here we are adding it directly to the <code>master</code> branch. We will learn how to create branches next.</p>
-<div class="inline-figure"><img src="img/new_file_03.png" width="816"></div>
-</div>
-<div id="create-branch" class="section level3" number="5.8.4">
-<h3>
-<span class="header-section-number">5.8.4</span> Creating a new branch (optional)<a class="anchor" aria-label="anchor" href="#create-branch"><i class="fas fa-link"></i></a>
-</h3>
-<p>You usually create a new branch if you want to add or change something in the <code>master</code> branch, but you’re not entirely sure if it will work or affect others working on the same files. Creating a branch makes a copy of your repository that you can freely edit, without having to worry about these things. We will call this a <code>feature</code> branch.</p>
-<p>To create a feature branch, click on the <code>Branch: master</code> button on the main repository page. This will display a list of branches (if there are any). To add a new branch simply type in the name you want and press <code>Enter</code>.</p>
-<div class="inline-figure"><img src="img/new_branch_01.png" width="803"></div>
-<p>This <code>new_branch</code> will be the same as the <code>master</code> branch (because it is an exact copy). To generate some changes, we add a new file called <code>file_in_new_branch.txt</code>. Once committed, we are taken back to the main repository page (note that you are now in <code>Branch: new_branch</code> if you have created a branch called <code>new_branch</code>). Because you have made a copy of your repository and you have made some changes, GitHub now gives you the opportunity to compare your <code>new_branch</code> with the <code>master</code> branch.</p>
-<p>Comparing the branches enables you to generate a <strong>pull request</strong>, which enables you to let people know that you have made changes. This means that people can review the changes and implement them. We will do that next.</p>
-<div class="inline-figure"><img src="img/new_branch_02.png" width="809"></div>
-</div>
-<div id="pull-requests" class="section level3" number="5.8.5">
-<h3>
-<span class="header-section-number">5.8.5</span> Pull requests (optional)<a class="anchor" aria-label="anchor" href="#pull-requests"><i class="fas fa-link"></i></a>
-</h3>
-<p>To start a pull request, press the <code>Compare &amp; pull request</code> button. This takes you to a screen where you can add a message to whoever is maintaining the <code>master</code> branch, explaining what you have done in your <code>new_branch</code> and requesting to implement the changes.</p>
-<div class="inline-figure"><img src="img/pull_request_01.png" width="812"></div>
-<p>After you press the <code>Create pull request</code> button you have the opportunity to merge the two branches. At the bottom of the screen you can write a message to the person who generated the pull request.</p>
-<div class="inline-figure"><img src="img/pull_request_02.png" width="811"></div>
-<div class="inline-figure"><img src="img/pull_request_03.png" width="75%"></div>
-<p>After you have merged the branches your feature branch becomes obsolete, so you can decide to delete it. Unless you want to make more changes, but it would be best to start a new branch for that again.</p>
-<div class="inline-figure"><img src="img/pull_request_04.png" width="75%"></div>
-<p>You are taken back to the main repository page once the pull request is merged with the <code>master</code> branch. You can see the changes have been implemented, because you now have a <code>file_in_new_branch.txt</code> in your <code>master</code> branch.</p>
-<div class="inline-figure"><img src="img/pull_request_05.png" width="810"></div>
-</div>
-</div>
-<div id="exercise-new-repository" class="section level2" number="5.9">
-<h2>
-<span class="header-section-number">5.9</span> Exercise: New repository<a class="anchor" aria-label="anchor" href="#exercise-new-repository"><i class="fas fa-link"></i></a>
-</h2>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 5.1  </strong></span>For this exercise we’ll practice creating a repository.</p>
-<ol style="list-style-type: decimal">
-<li>Create a new repository on your GitHub account</li>
-<li>Edit the README file and commit changes</li>
-</ol>
-<p>Remember the following:</p>
-<ul>
-<li>Use a meaningful name for your repository</li>
-<li>Initialise the repository with a README file</li>
-<li>Add an extension to the file name when creating a new file</li>
-</ul>
-</div>
-</div>
-<div id="exercise-pull-requests-optional" class="section level2" number="5.10">
-<h2>
-<span class="header-section-number">5.10</span> Exercise: Pull requests (optional)<a class="anchor" aria-label="anchor" href="#exercise-pull-requests-optional"><i class="fas fa-link"></i></a>
-</h2>
-<div class="exercise">
-<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 5.2  </strong></span>Pull requests are helpful if you’ve been contributing to a repository and you want the maintainer of the repository to consider adding the changes you’ve made to the <code>main</code>, live branch.</p>
-<ol style="list-style-type: decimal">
-<li>Open a pull request</li>
-<li>Review the changes</li>
-<li>Make more changes and push them</li>
-<li>Review the new changes and commit them</li>
-<li>Merge the branch with the <code>master</code> branch</li>
-</ol>
-</div>
-</div>
-<div id="glossary" class="section level2" number="5.11">
-<h2>
-<span class="header-section-number">5.11</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary"><i class="fas fa-link"></i></a>
 </h2>
 <p>The variety of phrases used in both types of version control systems can be a little overwhelming at times. Below is a non-exhaustive list of phrases you might come across. The glossary is an adapted version from <a href="https://linuxacademy.com/blog/linux/git-terms-explained/">here</a>.</p>
 <ul>
@@ -572,16 +473,15 @@ documents</code></pre>
 <strong>upstream</strong> While there is not necessarily a default “upstream” or “downstream” for Git projects, upstream can be considered where you push your Git changes — this is often the master branch of the project within the origin</li>
 </ul>
 </div>
-<div id="key-points-3" class="section level2" number="5.12">
+<div id="key-points-3" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">5.12</span> Key points<a class="anchor" aria-label="anchor" href="#key-points-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> Key points<a class="anchor" aria-label="anchor" href="#key-points-3"><i class="fas fa-link"></i></a>
 </h2>
 <div class="keypoints">
 <ul>
 <li>Version control can be centralised on a server, or distributed with a local copy of a repository</li>
 <li>The git model is distributed, with a local repository that can be linked to an online remote repository</li>
 <li>GitHub is an online platform for remote repositories, allowing easy sharing of and collaborations on repositories</li>
-<li>Branches are created if a new feature is being developed or if multiple people are working on the same project at once</li>
 </ul>
 </div>
 
@@ -589,7 +489,7 @@ documents</code></pre>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="documentation.html"><span class="header-section-number">4</span> Documentation</a></div>
-<div class="next"><a href="github-and-rstudio.html"><span class="header-section-number">6</span> GitHub and RStudio</a></div>
+<div class="next"><a href="github-1.html"><span class="header-section-number">6</span> GitHub</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -601,19 +501,8 @@ documents</code></pre>
 <li><a class="nav-link" href="#git-workflow"><span class="header-section-number">5.5</span> Git workflow</a></li>
 <li><a class="nav-link" href="#branches"><span class="header-section-number">5.6</span> Branches</a></li>
 <li><a class="nav-link" href="#files-under-version-control"><span class="header-section-number">5.7</span> Files under version control</a></li>
-<li>
-<a class="nav-link" href="#starting-on-github"><span class="header-section-number">5.8</span> Starting on GitHub</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#creating-a-new-repository"><span class="header-section-number">5.8.1</span> Creating a new repository</a></li>
-<li><a class="nav-link" href="#deleting-a-repository"><span class="header-section-number">5.8.2</span> Deleting a repository</a></li>
-<li><a class="nav-link" href="#creating-a-new-file-optional"><span class="header-section-number">5.8.3</span> Creating a new file (optional)</a></li>
-<li><a class="nav-link" href="#create-branch"><span class="header-section-number">5.8.4</span> Creating a new branch (optional)</a></li>
-<li><a class="nav-link" href="#pull-requests"><span class="header-section-number">5.8.5</span> Pull requests (optional)</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#exercise-new-repository"><span class="header-section-number">5.9</span> Exercise: New repository</a></li>
-<li><a class="nav-link" href="#exercise-pull-requests-optional"><span class="header-section-number">5.10</span> Exercise: Pull requests (optional)</a></li>
-<li><a class="nav-link" href="#glossary"><span class="header-section-number">5.11</span> Glossary</a></li>
-<li><a class="nav-link" href="#key-points-3"><span class="header-section-number">5.12</span> Key points</a></li>
+<li><a class="nav-link" href="#glossary"><span class="header-section-number">5.8</span> Glossary</a></li>
+<li><a class="nav-link" href="#key-points-3"><span class="header-section-number">5.9</span> Key points</a></li>
 </ul>
 
       <div class="book-extra">

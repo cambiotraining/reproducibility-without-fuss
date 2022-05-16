@@ -3,16 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Chapter 2 Installation instructions | Reproducibility without fuss</title>
+<title>Chapter 6 GitHub | Reproducibility without fuss</title>
 <meta name="author" content="Martin van Rongen">
-<meta name="description" content="Please ensure that you have done the following before the course (needed for version control exercises):  2.1 Install RStudio Make sure to have RStudio installed. You can download it here  2.2...">
+<meta name="description" content="6.1 Objectives  Be able to create and delete repositories on GitHub Be able to create Issues Know how to fork an existing repository Manage access   6.2 Starting on GitHub  6.2.1 Creating a new...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Chapter 2 Installation instructions | Reproducibility without fuss">
+<meta property="og:title" content="Chapter 6 GitHub | Reproducibility without fuss">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Please ensure that you have done the following before the course (needed for version control exercises):  2.1 Install RStudio Make sure to have RStudio installed. You can download it here  2.2...">
+<meta property="og:description" content="6.1 Objectives  Be able to create and delete repositories on GitHub Be able to create Issues Know how to fork an existing repository Manage access   6.2 Starting on GitHub  6.2.1 Creating a new...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 2 Installation instructions | Reproducibility without fuss">
-<meta name="twitter:description" content="Please ensure that you have done the following before the course (needed for version control exercises):  2.1 Install RStudio Make sure to have RStudio installed. You can download it here  2.2...">
+<meta name="twitter:title" content="Chapter 6 GitHub | Reproducibility without fuss">
+<meta name="twitter:description" content="6.1 Objectives  Be able to create and delete repositories on GitHub Be able to create Issues Know how to fork an existing repository Manage access   6.2 Starting on GitHub  6.2.1 Creating a new...">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references --><link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -340,11 +340,11 @@
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
-<li><a class="active" href="installation-instructions.html"><span class="header-section-number">2</span> Installation instructions</a></li>
+<li><a class="" href="installation-instructions.html"><span class="header-section-number">2</span> Installation instructions</a></li>
 <li><a class="" href="organisation.html"><span class="header-section-number">3</span> Organisation</a></li>
 <li><a class="" href="documentation.html"><span class="header-section-number">4</span> Documentation</a></li>
 <li><a class="" href="version-control.html"><span class="header-section-number">5</span> Version control</a></li>
-<li><a class="" href="github-1.html"><span class="header-section-number">6</span> GitHub</a></li>
+<li><a class="active" href="github-1.html"><span class="header-section-number">6</span> GitHub</a></li>
 <li><a class="" href="github-and-rstudio.html"><span class="header-section-number">7</span> GitHub and RStudio</a></li>
 <li><a class="" href="references.html"><span class="header-section-number">8</span> References</a></li>
 </ul>
@@ -354,57 +354,202 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="installation-instructions" class="section level1" number="2">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="github-1" class="section level1" number="6">
 <h1>
-<span class="header-section-number">2</span> Installation instructions<a class="anchor" aria-label="anchor" href="#installation-instructions"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6</span> GitHub<a class="anchor" aria-label="anchor" href="#github-1"><i class="fas fa-link"></i></a>
 </h1>
-<p>Please ensure that you have done the following before the course (needed for version control exercises):</p>
-<div id="install-rstudio" class="section level2" number="2.1">
+<div id="objectives-4" class="section level2" number="6.1">
 <h2>
-<span class="header-section-number">2.1</span> Install RStudio<a class="anchor" aria-label="anchor" href="#install-rstudio"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.1</span> Objectives<a class="anchor" aria-label="anchor" href="#objectives-4"><i class="fas fa-link"></i></a>
 </h2>
-<p>Make sure to have RStudio installed. You can download it <a href="https://www.rstudio.com/products/rstudio/download/">here</a></p>
+<div class="objectives">
+<ul>
+<li>Be able to create and delete repositories on GitHub</li>
+<li>Be able to create Issues</li>
+<li>Know how to fork an existing repository</li>
+<li>Manage access</li>
+</ul>
 </div>
-<div id="github" class="section level2" number="2.2">
+</div>
+<div id="starting-on-github" class="section level2" number="6.2">
 <h2>
-<span class="header-section-number">2.2</span> GitHub<a class="anchor" aria-label="anchor" href="#github"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.2</span> Starting on GitHub<a class="anchor" aria-label="anchor" href="#starting-on-github"><i class="fas fa-link"></i></a>
 </h2>
-<p>You’ll need a GitHub account and a Personal Access Token to link GitHub with RStudio:</p>
+<div id="creating-a-new-repository" class="section level3" number="6.2.1">
+<h3>
+<span class="header-section-number">6.2.1</span> Creating a new repository<a class="anchor" aria-label="anchor" href="#creating-a-new-repository"><i class="fas fa-link"></i></a>
+</h3>
+<p>Start a new repository by navigation to the top right corner on GitHub:</p>
+<div class="inline-figure"><img src="img/new_repo_01.png" width="200"></div>
+<p>This brings up a screen with the following options:</p>
 <ol style="list-style-type: decimal">
-<li>Create a GitHub account on: <a href="https://github.com">https://github.com</a>
-</li>
-<li>Set up a personal token to allow R Studio to link to GitHub (this is in place of using a password):
-<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token</a>
-</li>
+<li>Name of repository you want to create</li>
+<li>A short description of what the repository contains</li>
+<li>Make the repository Public or Private</li>
+<li>Check the <code>Initialize this repository with a README</code> to create a README file (recommended)</li>
+<li>Add a license (any license is better than none, but do look into what restrictions they impose)</li>
+<li>Create the repository</li>
+</ol>
+<div class="inline-figure"><img src="img/new_repo_02.png" width="1414"></div>
+</div>
+<div id="deleting-a-repository" class="section level3" number="6.2.2">
+<h3>
+<span class="header-section-number">6.2.2</span> Deleting a repository<a class="anchor" aria-label="anchor" href="#deleting-a-repository"><i class="fas fa-link"></i></a>
+</h3>
+<p>It happens. Sometimes you might just want to delete a repository, for whatever reason. Nothing to be ashamed of. But useful to know how!</p>
+<p>You go to your repository &gt; <code>Settings</code> then scroll all the way down to the bottom. There you’ll find something called the <strong>Danger Zone</strong>. When you press the <code>Delete this repository</code> button, it’ll ask you to type in the name of the repository, to make absolutely sure that you know that you’re about to delete it. There’s no going back after that, so if you’re not sure you’ll need the code later on - leave it.</p>
+</div>
+</div>
+<div id="exercise-new-repository" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Exercise: New repository<a class="anchor" aria-label="anchor" href="#exercise-new-repository"><i class="fas fa-link"></i></a>
+</h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 6.1  </strong></span>For this exercise we’ll practice creating a repository.</p>
+<ol style="list-style-type: decimal">
+<li>Create a new repository on your GitHub account</li>
+<li>Edit the README file and commit changes</li>
+</ol>
+<p>Remember the following:</p>
+<ul>
+<li>Use a meaningful name for your repository</li>
+<li>Initialise the repository with a README file</li>
+<li>Add an extension to the file name when creating a new file</li>
+</ul>
+</div>
+</div>
+<div id="creating-a-new-file-optional" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Creating a new file (optional)<a class="anchor" aria-label="anchor" href="#creating-a-new-file-optional"><i class="fas fa-link"></i></a>
+</h2>
+<p>We can add files directly from the GitHub interface. We’ll do this just to practice, but you’ll be unlikely to use this very often - I generally link a repository to an RStudio project and work that way.</p>
+<p>To create a new file, click on the <code>Create new file</code> button:</p>
+<div class="inline-figure"><img src="img/new_file_01.png" width="819"></div>
+<p>You then have the possibility to create a new file, in this case we are calling it <code>new_file.txt</code>. Note the use of file extensions. A file extension is required!</p>
+<div class="inline-figure"><img src="img/new_file_02.png" width="813"></div>
+<p>To add the file you need to add a <strong>commit message</strong>. A commit message should be a brief description of what you’ve done. You can add more information on <em>how</em> you have done things in the commit description.</p>
+<p>Here we are adding it directly to the <code>master</code> branch. We will learn how to create branches next.</p>
+<div class="inline-figure"><img src="img/new_file_03.png" width="816"></div>
+</div>
+<div id="create-branch" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Creating a new branch (optional)<a class="anchor" aria-label="anchor" href="#create-branch"><i class="fas fa-link"></i></a>
+</h2>
+<p>You usually create a new branch if you want to add or change something in the <code>master</code> branch, but you’re not entirely sure if it will work or affect others working on the same files. Creating a branch makes a copy of your repository that you can freely edit, without having to worry about these things. We will call this a <code>feature</code> branch.</p>
+<p>To create a feature branch, click on the <code>Branch: master</code> button on the main repository page. This will display a list of branches (if there are any). To add a new branch simply type in the name you want and press <code>Enter</code>.</p>
+<div class="inline-figure"><img src="img/new_branch_01.png" width="803"></div>
+<p>This <code>new_branch</code> will be the same as the <code>master</code> branch (because it is an exact copy). To generate some changes, we add a new file called <code>file_in_new_branch.txt</code>. Once committed, we are taken back to the main repository page (note that you are now in <code>Branch: new_branch</code> if you have created a branch called <code>new_branch</code>). Because you have made a copy of your repository and you have made some changes, GitHub now gives you the opportunity to compare your <code>new_branch</code> with the <code>master</code> branch.</p>
+<p>Comparing the branches enables you to generate a <strong>pull request</strong>, which enables you to let people know that you have made changes. This means that people can review the changes and implement them. We will do that next.</p>
+<div class="inline-figure"><img src="img/new_branch_02.png" width="809"></div>
+</div>
+<div id="pull-requests" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Pull requests (optional)<a class="anchor" aria-label="anchor" href="#pull-requests"><i class="fas fa-link"></i></a>
+</h2>
+<p>To start a pull request, press the <code>Compare &amp; pull request</code> button. This takes you to a screen where you can add a message to whoever is maintaining the <code>master</code> branch, explaining what you have done in your <code>new_branch</code> and requesting to implement the changes.</p>
+<div class="inline-figure"><img src="img/pull_request_01.png" width="812"></div>
+<p>After you press the <code>Create pull request</code> button you have the opportunity to merge the two branches. At the bottom of the screen you can write a message to the person who generated the pull request.</p>
+<div class="inline-figure"><img src="img/pull_request_02.png" width="811"></div>
+<div class="inline-figure"><img src="img/pull_request_03.png" width="75%"></div>
+<p>After you have merged the branches your feature branch becomes obsolete, so you can decide to delete it. Unless you want to make more changes, but it would be best to start a new branch for that again.</p>
+<div class="inline-figure"><img src="img/pull_request_04.png" width="75%"></div>
+<p>You are taken back to the main repository page once the pull request is merged with the <code>master</code> branch. You can see the changes have been implemented, because you now have a <code>file_in_new_branch.txt</code> in your <code>master</code> branch.</p>
+<div class="inline-figure"><img src="img/pull_request_05.png" width="810"></div>
+</div>
+<div id="exercise-pull-requests-optional" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Exercise: Pull requests (optional)<a class="anchor" aria-label="anchor" href="#exercise-pull-requests-optional"><i class="fas fa-link"></i></a>
+</h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 6.2  </strong></span>Pull requests are helpful if you’ve been contributing to a repository and you want the maintainer of the repository to consider adding the changes you’ve made to the <code>main</code>, live branch.</p>
+<ol style="list-style-type: decimal">
+<li>Open a pull request</li>
+<li>Review the changes</li>
+<li>Make more changes and push them</li>
+<li>Review the new changes and commit them</li>
+<li>Merge the branch with the <code>master</code> branch</li>
 </ol>
 </div>
-<div id="git-software" class="section level2" number="2.3">
+</div>
+<div id="forking-projects" class="section level2" number="6.8">
 <h2>
-<span class="header-section-number">2.3</span> Git software<a class="anchor" aria-label="anchor" href="#git-software"><i class="fas fa-link"></i></a>
+<span class="header-section-number">6.8</span> Forking projects<a class="anchor" aria-label="anchor" href="#forking-projects"><i class="fas fa-link"></i></a>
 </h2>
-<p>The software that keeps track of the different versions is <code>git</code> itself. You can follow the instructions here: <a href="https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN">https://support.rstudio.com/hc/en-us/articles/200532077-Version-Control-with-Git-and-SVN</a></p>
-<p>Later we will set up RStudio to access git and then it might be useful to know where git has been installed. This can be found out by either using the command <code>git --exec-path</code> from a command line prompt (Windows/Linux/Mac) or from the Terminal pane within R Studio.</p>
-<p>On a Mac/Linux computer you can also issue a <code>which git</code> command at the command line or R Studio Terminal. Results may differ between these commands as operating systems often use aliases that point to the real location of the program.</p>
-<div class="note">
-<p><strong>MacOSX</strong></p>
-<p>The <a href="https://git-scm.com/download/mac">installation instructions for Mac</a> give you a few different options.</p>
-<p>The easiest option is probably to install using Xcode, but it’s a huge (GBs!) package that contains all kinds of other things you probably do not need.</p>
-<p>After that, you’re probably best off using <code>homebrew</code> - a package manager that allows you to install all kinds of interesting stuff via the command line. If you’re not comfortable with that, then see:</p>
-<p>the <a href="https://sourceforge.net/projects/git-osx-installer/">standalone installer</a> provided by Tim Harper.</p>
+<p>So far we have used repositories that we created ourselves. But you might find that you want to add or make changes to a repository that somebody else owns. Or you like their project and want to adapt it to your needs. In that case you need to make a personal copy of that project. This is called <strong>forking</strong>.</p>
+<p>To fork a repository you need to navigate to the repository page on the maintainers GitHub account whilst logged into your own account. You then click on the <code>fork</code> button. The repository is then copied to your account:</p>
+<div class="inline-figure"><img src="img/forking_01.png" width="818"></div>
+<div class="inline-figure"><img src="img/forking_02.png" width="578"></div>
+<p>The forked repository will show up in your repository list. It will specify that it is a forked repository:</p>
+<div class="inline-figure"><img src="img/forking_03.png" width="373"></div>
+<p>Once you have forked a repository to your GitHub account you can make changes to it. Good practice is to create a <strong>new branch</strong> in your copy of the repository, so that you do not run the risk of confusing the <code>master</code> branch of your copy with the <code>master</code> branch of the original repository.</p>
+<p>In this case we’re adding a new branch called <code>new_feature</code>.</p>
+<p>After you have created a new branch on your forked copy you can start editing/adding as you like. You do this as you have done before, by <strong>staging</strong> and <strong>committing</strong> changes to your repository.</p>
+<p>When you want to suggest incorporating some of these changes into the original repository you will have to open a <strong>pull request</strong>. This works in the same way is described in the <a href="github-1.html#pull-requests">pull requests</a> section, but instead of comparing two branches on the same repository, you are comparing the branch on your forked copy with the <code>master</code> branch of the original repository.</p>
+<p>Your pull request will show up in the original repository. Note that you can also see that the original repository has been forked:</p>
+<div class="inline-figure"><img src="img/forking_04.png" width="1021"></div>
+</div>
+<div id="creating-issues" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Creating issues<a class="anchor" aria-label="anchor" href="#creating-issues"><i class="fas fa-link"></i></a>
+</h2>
+<p>GitHub keeps track of bugs, improvements and tasks through <strong>Issues</strong>. The good thing about issues is that they can be shared and discussed with collaborators, in a similar way as to how the pull request system works.</p>
+<p>An issue is created from the <code>Issues</code> tab in the repository:</p>
+<div class="inline-figure"><img src="img/issues_01.png" width="806"></div>
+<p>A new issue requires a title and description. It’s good to try and be as concise and complete as possible so that the developer knows what it is that you want. You can label the issue - in this case it is an Enhancement, but there is a whole range of labels you can choose from. Labelling can be particularly helpful when there are many issues and it helps you organise and prioritise your work.</p>
+<div class="inline-figure"><img src="img/issues_02.png" width="827"></div>
+<p>Issues are always assigned a unique ID, which you can use to refer to them in comments:</p>
+<div class="inline-figure"><img src="img/issues_03.png" width="819"></div>
+<div class="inline-figure"><img src="img/issues_04.png" width="808"></div>
+</div>
+<div id="managing-access" class="section level2" number="6.10">
+<h2>
+<span class="header-section-number">6.10</span> Managing access<a class="anchor" aria-label="anchor" href="#managing-access"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you have a public repository everyone can fork the repository and make changes to that (forked) copy. You can also invite people to collaborate on your project.</p>
+<p>In order to do that you need to go to the <code>Settings</code> &gt; <code>Manage access</code> page:</p>
+<div class="inline-figure"><img src="img/manage_access.png" width="814"></div>
+<p>Here you can invite collaborators and once they have accepted, then can open pull requests and make changes to the repository.</p>
+<p>To find repositories where you are a collaborator on you need to go to <code>Settings</code> &gt; <code>Repositories</code>. Unfortunately these repositories do not show up on your own Repositories tab.</p>
+<div class="inline-figure"><img src="img/manage_collaborative_repo.png" width="1276"></div>
+</div>
+<div id="key-points-4" class="section level2" number="6.11">
+<h2>
+<span class="header-section-number">6.11</span> Key points<a class="anchor" aria-label="anchor" href="#key-points-4"><i class="fas fa-link"></i></a>
+</h2>
+<div class="keypoints">
+<ul>
+<li>Repositories can be created and deleted on GitHub</li>
+<li>Branches are helpful when you’re working on a new feature/addition without affecting the live <code>main</code> branch</li>
+<li>Forking allows you to work on somebody else’s repository</li>
+<li>Issues are a useful tool to keep track of bugs, enhancements, ideas etc</li>
+</ul>
 </div>
 
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="index.html"><span class="header-section-number">1</span> Introduction</a></div>
-<div class="next"><a href="organisation.html"><span class="header-section-number">3</span> Organisation</a></div>
+<div class="prev"><a href="version-control.html"><span class="header-section-number">5</span> Version control</a></div>
+<div class="next"><a href="github-and-rstudio.html"><span class="header-section-number">7</span> GitHub and RStudio</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#installation-instructions"><span class="header-section-number">2</span> Installation instructions</a></li>
-<li><a class="nav-link" href="#install-rstudio"><span class="header-section-number">2.1</span> Install RStudio</a></li>
-<li><a class="nav-link" href="#github"><span class="header-section-number">2.2</span> GitHub</a></li>
-<li><a class="nav-link" href="#git-software"><span class="header-section-number">2.3</span> Git software</a></li>
+<li><a class="nav-link" href="#github-1"><span class="header-section-number">6</span> GitHub</a></li>
+<li><a class="nav-link" href="#objectives-4"><span class="header-section-number">6.1</span> Objectives</a></li>
+<li>
+<a class="nav-link" href="#starting-on-github"><span class="header-section-number">6.2</span> Starting on GitHub</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#creating-a-new-repository"><span class="header-section-number">6.2.1</span> Creating a new repository</a></li>
+<li><a class="nav-link" href="#deleting-a-repository"><span class="header-section-number">6.2.2</span> Deleting a repository</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#exercise-new-repository"><span class="header-section-number">6.3</span> Exercise: New repository</a></li>
+<li><a class="nav-link" href="#creating-a-new-file-optional"><span class="header-section-number">6.4</span> Creating a new file (optional)</a></li>
+<li><a class="nav-link" href="#create-branch"><span class="header-section-number">6.5</span> Creating a new branch (optional)</a></li>
+<li><a class="nav-link" href="#pull-requests"><span class="header-section-number">6.6</span> Pull requests (optional)</a></li>
+<li><a class="nav-link" href="#exercise-pull-requests-optional"><span class="header-section-number">6.7</span> Exercise: Pull requests (optional)</a></li>
+<li><a class="nav-link" href="#forking-projects"><span class="header-section-number">6.8</span> Forking projects</a></li>
+<li><a class="nav-link" href="#creating-issues"><span class="header-section-number">6.9</span> Creating issues</a></li>
+<li><a class="nav-link" href="#managing-access"><span class="header-section-number">6.10</span> Managing access</a></li>
+<li><a class="nav-link" href="#key-points-4"><span class="header-section-number">6.11</span> Key points</a></li>
 </ul>
 
       <div class="book-extra">
