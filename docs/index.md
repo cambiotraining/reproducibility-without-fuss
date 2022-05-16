@@ -1,7 +1,7 @@
 --- 
 title: "Reproducibility without fuss"
 author: "Martin van Rongen"
-date: "2022-05-12"
+date: "2022-05-16"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

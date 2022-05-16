@@ -8,7 +8,6 @@ exr:unlabeled-div-7
 exr:unlabeled-div-8
 exr:unlabeled-div-9
 exr:unlabeled-div-10
-exr:unlabeled-div-11
 introduction
 objectives
 purpose-and-aim
@@ -67,14 +66,15 @@ centralised-version-control-systems
 distributed-version-control-systems
 git-workflow
 branches
+files-under-version-control
 starting-on-github
 creating-a-new-repository
-creating-a-new-file
+deleting-a-repository
+creating-a-new-file-optional
 create-branch
 pull-requests
 exercise-new-repository
-exercise-branches
-exercise-pull-requests
+exercise-pull-requests-optional
 glossary
 key-points-3
 github-and-rstudio

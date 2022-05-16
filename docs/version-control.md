@@ -61,7 +61,7 @@ When you are happy with the commit you've made on your (local) computer, then yo
 
 The image was adapted from the [RebelLabs Git Cheat Sheet](https://i.redd.it/8341g68g1v7y.png).
 
-### Branches
+## Branches
 
 If you are working on something by yourself then you're able to judge whether or not you want to push any changes to your remote repository. Things get a bit more complicated when you are working in a team, because multiple people could work on the same file and the changes you push could affect others. The way GitHub deals with this is through the use of **branches**.
 
@@ -77,6 +77,22 @@ Below is a schematic overview of the process you go through on GitHub.
 
 Image adapted from [the GitHub guide](https://guides.github.com/introduction/flow/).
 
+## Files under version control
+When you are using version control, you probably do not want to put every file and folder in your working directory under version control. After all, your working (or project) folder will likely contain binary files, such as text documents or presentations, and data that you want to keep separate.
+
+Data can take up lots of space and GitHub is not the place to store these files - it really is intended for code. Data associated with publications is usually shared via dedicated data repositories, such as [Apollo - University of Cambridge Repository](https://www.repository.cam.ac.uk).
+
+But only putting part of the files under version control means that we need to tell git which files to keep track of, or not. It does so with a `gitignore` file, where we tell git which files to ignore.
+
+In a little while we'll be creating our own repository and there you have the option to add a `.gitignore` file from the start. However, I tend to forego on that, and let RStudio create one once I link a repository to RStudio (more on that later). You can add files and folders to a `.gitignore` file, and it might look something like this:
+
+```
+.Rproj
+.RData
+data
+documents
+```
+
 ## Starting on GitHub
 
 ### Creating a new repository
@@ -91,17 +107,24 @@ This brings up a screen with the following options:
 2. A short description of what the repository contains
 3. Make the repository Public or Private
 4. Check the `Initialize this repository with a README` to create a README file (recommended)
-5. Create the repository
+5. Add a license (any license is better than none, but do look into what restrictions they impose)
+6. Create the repository
 
 <img src="img/new_repo_02.png" width="1414" />
 
-### Creating a new file
+### Deleting a repository
+It happens. Sometimes you might just want to delete a repository, for whatever reason. Nothing to be ashamed of. But useful to know how!
+
+You go to your repository > `Settings` then scroll all the way down to the bottom. There you'll find something called the **Danger Zone**. When you press the `Delete this repository` button, it'll ask you to type in the name of the repository, to make absolutely sure that you know that you're about to delete it. There's no going back after that, so if you're not sure you'll need the code later on - leave it.
+
+### Creating a new file (optional)
+We can add files directly from the GitHub interface. We'll do this just to practice, but you'll be unlikely to use this very often - I generally link a repository to an RStudio project and work that way.
 
 To create a new file, click on the `Create new file` button:
 
 <img src="img/new_file_01.png" width="819" />
 
-You then have the possibility to create a new file, in this case we are calling it `new_file.txt`. Note the use of file extensions.
+You then have the possibility to create a new file, in this case we are calling it `new_file.txt`. Note the use of file extensions. A file extension is required!
 
 <img src="img/new_file_02.png" width="813" />
 
@@ -112,7 +135,7 @@ Here we are adding it directly to the `master` branch. We will learn how to crea
 <img src="img/new_file_03.png" width="816" />
 
 
-### Creating a new branch {#create-branch}
+### Creating a new branch (optional) {#create-branch}
 
 You usually create a new branch if you want to add or change something in the `master` branch, but you're not entirely sure if it will work or affect others working on the same files. Creating a branch makes a copy of your repository that you can freely edit, without having to worry about these things. We will call this a `feature` branch.
 
@@ -126,7 +149,7 @@ Comparing the branches enables you to generate a **pull request**, which enables
 
 <img src="img/new_branch_02.png" width="809" />
 
-### Pull requests {#pull-requests}
+### Pull requests (optional) {#pull-requests}
 
 To start a pull request, press the `Compare & pull request` button. This takes you to a screen where you can add a message to whoever is maintaining the `master` branch, explaining what you have done in your `new_branch` and requesting to implement the changes.
 
@@ -151,7 +174,7 @@ You are taken back to the main repository page once the pull request is merged w
 For this exercise we'll practice creating a repository.
 
 1. Create a new repository on your GitHub account
-2. Add a new file to the repository
+2. Edit the README file and commit changes
 
 Remember the following:
  
@@ -161,19 +184,7 @@ Remember the following:
 
 :::
 
-## Exercise: Branches
-:::exercise
-Once you've created a repository, you can start branching out (ha!). Branches are useful if you want to add a feature, but aren't ready to have that as part of your `main` branch.
-
-You can do this in GitHub or you can try this in RStudio.
-
-1. Create a new branch
-2. Make some changes to the branch by editing or adding a file
-3. Commit the changes to the branch
-
-:::
-
-## Exercise: Pull requests
+## Exercise: Pull requests (optional)
 :::exercise
 Pull requests are helpful if you've been contributing to a repository and you want the maintainer of the repository to consider adding the changes you've made to the `main`, live branch.
 
