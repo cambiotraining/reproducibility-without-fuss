@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 GitHub | Reproducibility without fuss</title>
+  <meta name="description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 GitHub | Reproducibility without fuss" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 GitHub | Reproducibility without fuss" />
+  
+  <meta name="twitter:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+<meta name="author" content="Martin van Rongen" />
+
+
+<meta name="date" content="2023-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="version-control.html"/>
+<link rel="next" href="github-and-rstudio.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#purpose-and-aim"><i class="fa fa-check"></i><b>1.2</b> Purpose and aim</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#causes-of-irreproducibility"><i class="fa fa-check"></i><b>1.3</b> Causes of irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#not-a-true-result"><i class="fa fa-check"></i><b>1.3.1</b> Not a true result</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#insufficient-information"><i class="fa fa-check"></i><b>1.3.2</b> Insufficient information</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#issues-with-replication"><i class="fa fa-check"></i><b>1.3.3</b> Issues with replication</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#solutions-to-irreproducibility"><i class="fa fa-check"></i><b>1.4</b> Solutions to irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#the-right-stuff"><i class="fa fa-check"></i><b>1.4.1</b> The right stuff</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#making-reproducing-easy"><i class="fa fa-check"></i><b>1.4.2</b> Making reproducing easy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#forensic-science"><i class="fa fa-check"></i><b>1.5</b> Exercise: forensic science</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#key-points"><i class="fa fa-check"></i><b>1.6</b> Key points</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#authors-and-materials"><i class="fa fa-check"></i><b>1.7</b> Authors and materials</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation-instructions.html"><a href="installation-instructions.html"><i class="fa fa-check"></i><b>2</b> Installation instructions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation-instructions.html"><a href="installation-instructions.html#install-rstudio"><i class="fa fa-check"></i><b>2.1</b> Install RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="installation-instructions.html"><a href="installation-instructions.html#github"><i class="fa fa-check"></i><b>2.2</b> GitHub</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-instructions.html"><a href="installation-instructions.html#git-software"><i class="fa fa-check"></i><b>2.3</b> Git software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organisation.html"><a href="organisation.html"><i class="fa fa-check"></i><b>3</b> Organisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organisation.html"><a href="organisation.html#objectives-1"><i class="fa fa-check"></i><b>3.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="organisation.html"><a href="organisation.html#exercise-tidy-forensic-science"><i class="fa fa-check"></i><b>3.2</b> Exercise: tidy forensic science</a></li>
+<li class="chapter" data-level="3.3" data-path="organisation.html"><a href="organisation.html#exercise-me-me-me"><i class="fa fa-check"></i><b>3.3</b> Exercise: Me, me, me!</a></li>
+<li class="chapter" data-level="3.4" data-path="organisation.html"><a href="organisation.html#key-points-1"><i class="fa fa-check"></i><b>3.4</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>4</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="documentation.html"><a href="documentation.html#objectives-2"><i class="fa fa-check"></i><b>4.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="documentation.html"><a href="documentation.html#libraries"><i class="fa fa-check"></i><b>4.2</b> Libraries</a></li>
+<li class="chapter" data-level="4.3" data-path="documentation.html"><a href="documentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="documentation.html"><a href="documentation.html#r-markdown-header"><i class="fa fa-check"></i><b>4.3.1</b> R Markdown header</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="documentation.html"><a href="documentation.html#markdown-header"><i class="fa fa-check"></i><b>4.4</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="documentation.html"><a href="documentation.html#headings"><i class="fa fa-check"></i><b>4.4.1</b> Headings</a></li>
+<li class="chapter" data-level="4.4.2" data-path="documentation.html"><a href="documentation.html#inline-text-formatting"><i class="fa fa-check"></i><b>4.4.2</b> Inline text formatting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="documentation.html"><a href="documentation.html#line-breaks"><i class="fa fa-check"></i><b>4.4.3</b> Line breaks</a></li>
+<li class="chapter" data-level="4.4.4" data-path="documentation.html"><a href="documentation.html#links"><i class="fa fa-check"></i><b>4.4.4</b> Links</a></li>
+<li class="chapter" data-level="4.4.5" data-path="documentation.html"><a href="documentation.html#lists"><i class="fa fa-check"></i><b>4.4.5</b> Lists</a></li>
+<li class="chapter" data-level="4.4.6" data-path="documentation.html"><a href="documentation.html#inserting-images"><i class="fa fa-check"></i><b>4.4.6</b> Inserting images</a></li>
+<li class="chapter" data-level="4.4.7" data-path="documentation.html"><a href="documentation.html#blocks"><i class="fa fa-check"></i><b>4.4.7</b> Blocks</a></li>
+<li class="chapter" data-level="4.4.8" data-path="documentation.html"><a href="documentation.html#adding-a-table-of-contents"><i class="fa fa-check"></i><b>4.4.8</b> Adding a table of contents</a></li>
+<li class="chapter" data-level="4.4.9" data-path="documentation.html"><a href="documentation.html#adding-references"><i class="fa fa-check"></i><b>4.4.9</b> Adding references</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="documentation.html"><a href="documentation.html#exercise-getting-started"><i class="fa fa-check"></i><b>4.5</b> Exercise: Getting started</a></li>
+<li class="chapter" data-level="4.6" data-path="documentation.html"><a href="documentation.html#r-code-chunks"><i class="fa fa-check"></i><b>4.6</b> R code chunks</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="documentation.html"><a href="documentation.html#chunk-names"><i class="fa fa-check"></i><b>4.6.1</b> Chunk names</a></li>
+<li class="chapter" data-level="4.6.2" data-path="documentation.html"><a href="documentation.html#chunk-options"><i class="fa fa-check"></i><b>4.6.2</b> Chunk options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="documentation.html"><a href="documentation.html#tables"><i class="fa fa-check"></i><b>4.7</b> Tables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="documentation.html"><a href="documentation.html#manually-creating-tables"><i class="fa fa-check"></i><b>4.7.1</b> Manually creating tables</a></li>
+<li class="chapter" data-level="4.7.2" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-rmarkdown"><i class="fa fa-check"></i><b>4.7.2</b> Dynamic tables using <code>rmarkdown</code></a></li>
+<li class="chapter" data-level="4.7.3" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-kableextra"><i class="fa fa-check"></i><b>4.7.3</b> Dynamic tables using <code>kableExtra</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="documentation.html"><a href="documentation.html#composing-figures-with-patchwork"><i class="fa fa-check"></i><b>4.8</b> Composing figures with <code>patchwork</code></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="documentation.html"><a href="documentation.html#adding-plots-together"><i class="fa fa-check"></i><b>4.8.1</b> Adding plots together</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="documentation.html"><a href="documentation.html#exercise-writing-a-short-report"><i class="fa fa-check"></i><b>4.9</b> Exercise: Writing a short report</a></li>
+<li class="chapter" data-level="4.10" data-path="documentation.html"><a href="documentation.html#r-markdown-limitations"><i class="fa fa-check"></i><b>4.10</b> R Markdown limitations</a></li>
+<li class="chapter" data-level="4.11" data-path="documentation.html"><a href="documentation.html#key-points-2"><i class="fa fa-check"></i><b>4.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>5</b> Version control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="version-control.html"><a href="version-control.html#objectives-3"><i class="fa fa-check"></i><b>5.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="version-control.html"><a href="version-control.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="version-control.html"><a href="version-control.html#centralised-version-control-systems"><i class="fa fa-check"></i><b>5.3</b> Centralised version control systems</a></li>
+<li class="chapter" data-level="5.4" data-path="version-control.html"><a href="version-control.html#distributed-version-control-systems"><i class="fa fa-check"></i><b>5.4</b> Distributed version control systems</a></li>
+<li class="chapter" data-level="5.5" data-path="version-control.html"><a href="version-control.html#git-workflow"><i class="fa fa-check"></i><b>5.5</b> Git workflow</a></li>
+<li class="chapter" data-level="5.6" data-path="version-control.html"><a href="version-control.html#branches"><i class="fa fa-check"></i><b>5.6</b> Branches</a></li>
+<li class="chapter" data-level="5.7" data-path="version-control.html"><a href="version-control.html#files-under-version-control"><i class="fa fa-check"></i><b>5.7</b> Files under version control</a></li>
+<li class="chapter" data-level="5.8" data-path="version-control.html"><a href="version-control.html#glossary"><i class="fa fa-check"></i><b>5.8</b> Glossary</a></li>
+<li class="chapter" data-level="5.9" data-path="version-control.html"><a href="version-control.html#key-points-3"><i class="fa fa-check"></i><b>5.9</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-1.html"><a href="github-1.html"><i class="fa fa-check"></i><b>6</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-1.html"><a href="github-1.html#objectives-4"><i class="fa fa-check"></i><b>6.1</b> Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="github-1.html"><a href="github-1.html#starting-on-github"><i class="fa fa-check"></i><b>6.2</b> Starting on GitHub</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="github-1.html"><a href="github-1.html#creating-a-new-repository"><i class="fa fa-check"></i><b>6.2.1</b> Creating a new repository</a></li>
+<li class="chapter" data-level="6.2.2" data-path="github-1.html"><a href="github-1.html#deleting-a-repository"><i class="fa fa-check"></i><b>6.2.2</b> Deleting a repository</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="github-1.html"><a href="github-1.html#exercise-new-repository"><i class="fa fa-check"></i><b>6.3</b> Exercise: New repository</a></li>
+<li class="chapter" data-level="6.4" data-path="github-1.html"><a href="github-1.html#creating-a-new-file-optional"><i class="fa fa-check"></i><b>6.4</b> Creating a new file (optional)</a></li>
+<li class="chapter" data-level="6.5" data-path="github-1.html"><a href="github-1.html#create-branch"><i class="fa fa-check"></i><b>6.5</b> Creating a new branch (optional)</a></li>
+<li class="chapter" data-level="6.6" data-path="github-1.html"><a href="github-1.html#pull-requests"><i class="fa fa-check"></i><b>6.6</b> Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.7" data-path="github-1.html"><a href="github-1.html#exercise-pull-requests-optional"><i class="fa fa-check"></i><b>6.7</b> Exercise: Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.8" data-path="github-1.html"><a href="github-1.html#forking-projects"><i class="fa fa-check"></i><b>6.8</b> Forking projects</a></li>
+<li class="chapter" data-level="6.9" data-path="github-1.html"><a href="github-1.html#creating-issues"><i class="fa fa-check"></i><b>6.9</b> Creating issues</a></li>
+<li class="chapter" data-level="6.10" data-path="github-1.html"><a href="github-1.html#managing-access"><i class="fa fa-check"></i><b>6.10</b> Managing access</a></li>
+<li class="chapter" data-level="6.11" data-path="github-1.html"><a href="github-1.html#key-points-4"><i class="fa fa-check"></i><b>6.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html"><i class="fa fa-check"></i><b>7</b> GitHub and RStudio</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#objectives-5"><i class="fa fa-check"></i><b>7.1</b> Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#using-github-from-rstudio"><i class="fa fa-check"></i><b>7.2</b> Using GitHub from RStudio</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#linking-git-and-rstudio"><i class="fa fa-check"></i><b>7.2.1</b> Linking Git and RStudio</a></li>
+<li class="chapter" data-level="7.2.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#starting-a-new-project-under-git-control"><i class="fa fa-check"></i><b>7.2.2</b> Starting a new project under Git control</a></li>
+<li class="chapter" data-level="7.2.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#changes-and-your-remote-repository"><i class="fa fa-check"></i><b>7.2.3</b> Changes and your remote repository</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-version-control-in-rstudio"><i class="fa fa-check"></i><b>7.3</b> Exercise: Version control in RStudio</a></li>
+<li class="chapter" data-level="7.4" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-branching-and-changes"><i class="fa fa-check"></i><b>7.4</b> Exercise: Branching and changes</a></li>
+<li class="chapter" data-level="7.5" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#key-points-5"><i class="fa fa-check"></i><b>7.5</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducibility without fuss</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="github-1" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> GitHub<a href="github-1.html#github-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objectives-4" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Objectives<a href="github-1.html#objectives-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<ul>
+<li>Be able to create and delete repositories on GitHub</li>
+<li>Be able to create Issues</li>
+<li>Know how to fork an existing repository</li>
+<li>Manage access</li>
+</ul>
+</div>
+</div>
+<div id="starting-on-github" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Starting on GitHub<a href="github-1.html#starting-on-github" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="creating-a-new-repository" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Creating a new repository<a href="github-1.html#creating-a-new-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Start a new repository by navigation to the top right corner on GitHub:</p>
+<p><img src="img/new_repo_01.png" width="200" /></p>
+<p>This brings up a screen with the following options:</p>
+<ol style="list-style-type: decimal">
+<li>Name of repository you want to create</li>
+<li>A short description of what the repository contains</li>
+<li>Make the repository Public or Private</li>
+<li>Check the <code>Initialize this repository with a README</code> to create a README file (recommended)</li>
+<li>Add a license (any license is better than none, but do look into what restrictions they impose)</li>
+<li>Create the repository</li>
+</ol>
+<p><img src="img/new_repo_02.png" width="1414" /></p>
+</div>
+<div id="deleting-a-repository" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Deleting a repository<a href="github-1.html#deleting-a-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It happens. Sometimes you might just want to delete a repository, for whatever reason. Nothing to be ashamed of. But useful to know how!</p>
+<p>You go to your repository &gt; <code>Settings</code> then scroll all the way down to the bottom. There you’ll find something called the <strong>Danger Zone</strong>. When you press the <code>Delete this repository</code> button, it’ll ask you to type in the name of the repository, to make absolutely sure that you know that you’re about to delete it. There’s no going back after that, so if you’re not sure you’ll need the code later on - leave it.</p>
+</div>
+</div>
+<div id="exercise-new-repository" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Exercise: New repository<a href="github-1.html#exercise-new-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-6" class="exercise"><strong>Exercise 6.1  </strong></span>For this exercise we’ll practice creating a repository.</p>
+<ol style="list-style-type: decimal">
+<li>Create a new repository on your GitHub account</li>
+<li>Edit the README file and commit changes</li>
+</ol>
+<p>Remember the following:</p>
+<ul>
+<li>Use a meaningful name for your repository</li>
+<li>Initialise the repository with a README file</li>
+<li>Add an extension to the file name when creating a new file</li>
+</ul>
+</div>
+</div>
+<div id="creating-a-new-file-optional" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Creating a new file (optional)<a href="github-1.html#creating-a-new-file-optional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We can add files directly from the GitHub interface. We’ll do this just to practice, but you’ll be unlikely to use this very often - I generally link a repository to an RStudio project and work that way.</p>
+<p>To create a new file, click on the <code>Create new file</code> button:</p>
+<p><img src="img/new_file_01.png" width="819" /></p>
+<p>You then have the possibility to create a new file, in this case we are calling it <code>new_file.txt</code>. Note the use of file extensions. A file extension is required!</p>
+<p><img src="img/new_file_02.png" width="813" /></p>
+<p>To add the file you need to add a <strong>commit message</strong>. A commit message should be a brief description of what you’ve done. You can add more information on <em>how</em> you have done things in the commit description.</p>
+<p>Here we are adding it directly to the <code>master</code> branch. We will learn how to create branches next.</p>
+<p><img src="img/new_file_03.png" width="816" /></p>
+</div>
+<div id="create-branch" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Creating a new branch (optional)<a href="github-1.html#create-branch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You usually create a new branch if you want to add or change something in the <code>master</code> branch, but you’re not entirely sure if it will work or affect others working on the same files. Creating a branch makes a copy of your repository that you can freely edit, without having to worry about these things. We will call this a <code>feature</code> branch.</p>
+<p>To create a feature branch, click on the <code>Branch: master</code> button on the main repository page. This will display a list of branches (if there are any). To add a new branch simply type in the name you want and press <code>Enter</code>.</p>
+<p><img src="img/new_branch_01.png" width="803" /></p>
+<p>This <code>new_branch</code> will be the same as the <code>master</code> branch (because it is an exact copy). To generate some changes, we add a new file called <code>file_in_new_branch.txt</code>. Once committed, we are taken back to the main repository page (note that you are now in <code>Branch: new_branch</code> if you have created a branch called <code>new_branch</code>). Because you have made a copy of your repository and you have made some changes, GitHub now gives you the opportunity to compare your <code>new_branch</code> with the <code>master</code> branch.</p>
+<p>Comparing the branches enables you to generate a <strong>pull request</strong>, which enables you to let people know that you have made changes. This means that people can review the changes and implement them. We will do that next.</p>
+<p><img src="img/new_branch_02.png" width="809" /></p>
+</div>
+<div id="pull-requests" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Pull requests (optional)<a href="github-1.html#pull-requests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To start a pull request, press the <code>Compare &amp; pull request</code> button. This takes you to a screen where you can add a message to whoever is maintaining the <code>master</code> branch, explaining what you have done in your <code>new_branch</code> and requesting to implement the changes.</p>
+<p><img src="img/pull_request_01.png" width="812" /></p>
+<p>After you press the <code>Create pull request</code> button you have the opportunity to merge the two branches. At the bottom of the screen you can write a message to the person who generated the pull request.</p>
+<p><img src="img/pull_request_02.png" width="811" /></p>
+<p><img src="img/pull_request_03.png" width="75%" /></p>
+<p>After you have merged the branches your feature branch becomes obsolete, so you can decide to delete it. Unless you want to make more changes, but it would be best to start a new branch for that again.</p>
+<p><img src="img/pull_request_04.png" width="75%" /></p>
+<p>You are taken back to the main repository page once the pull request is merged with the <code>master</code> branch. You can see the changes have been implemented, because you now have a <code>file_in_new_branch.txt</code> in your <code>master</code> branch.</p>
+<p><img src="img/pull_request_05.png" width="810" /></p>
+</div>
+<div id="exercise-pull-requests-optional" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Exercise: Pull requests (optional)<a href="github-1.html#exercise-pull-requests-optional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-7" class="exercise"><strong>Exercise 6.2  </strong></span>Pull requests are helpful if you’ve been contributing to a repository and you want the maintainer of the repository to consider adding the changes you’ve made to the <code>main</code>, live branch.</p>
+<ol style="list-style-type: decimal">
+<li>Open a pull request</li>
+<li>Review the changes</li>
+<li>Make more changes and push them</li>
+<li>Review the new changes and commit them</li>
+<li>Merge the branch with the <code>master</code> branch</li>
+</ol>
+</div>
+</div>
+<div id="forking-projects" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Forking projects<a href="github-1.html#forking-projects" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have used repositories that we created ourselves. But you might find that you want to add or make changes to a repository that somebody else owns. Or you like their project and want to adapt it to your needs. In that case you need to make a personal copy of that project. This is called <strong>forking</strong>.</p>
+<p>To fork a repository you need to navigate to the repository page on the maintainers GitHub account whilst logged into your own account. You then click on the <code>fork</code> button. The repository is then copied to your account:</p>
+<p><img src="img/forking_01.png" width="818" /></p>
+<p><img src="img/forking_02.png" width="578" /></p>
+<p>The forked repository will show up in your repository list. It will specify that it is a forked repository:</p>
+<p><img src="img/forking_03.png" width="373" /></p>
+<p>Once you have forked a repository to your GitHub account you can make changes to it. Good practice is to create a <strong>new branch</strong> in your copy of the repository, so that you do not run the risk of confusing the <code>master</code> branch of your copy with the <code>master</code> branch of the original repository.</p>
+<p>In this case we’re adding a new branch called <code>new_feature</code>.</p>
+<p>After you have created a new branch on your forked copy you can start editing/adding as you like. You do this as you have done before, by <strong>staging</strong> and <strong>committing</strong> changes to your repository.</p>
+<p>When you want to suggest incorporating some of these changes into the original repository you will have to open a <strong>pull request</strong>. This works in the same way is described in the <a href="github-1.html#pull-requests">pull requests</a> section, but instead of comparing two branches on the same repository, you are comparing the branch on your forked copy with the <code>master</code> branch of the original repository.</p>
+<p>Your pull request will show up in the original repository. Note that you can also see that the original repository has been forked:</p>
+<p><img src="img/forking_04.png" width="1021" /></p>
+</div>
+<div id="creating-issues" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Creating issues<a href="github-1.html#creating-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>GitHub keeps track of bugs, improvements and tasks through <strong>Issues</strong>. The good thing about issues is that they can be shared and discussed with collaborators, in a similar way as to how the pull request system works.</p>
+<p>An issue is created from the <code>Issues</code> tab in the repository:</p>
+<p><img src="img/issues_01.png" width="806" /></p>
+<p>A new issue requires a title and description. It’s good to try and be as concise and complete as possible so that the developer knows what it is that you want. You can label the issue - in this case it is an Enhancement, but there is a whole range of labels you can choose from. Labelling can be particularly helpful when there are many issues and it helps you organise and prioritise your work.</p>
+<p><img src="img/issues_02.png" width="827" /></p>
+<p>Issues are always assigned a unique ID, which you can use to refer to them in comments:</p>
+<p><img src="img/issues_03.png" width="819" /></p>
+<p><img src="img/issues_04.png" width="808" /></p>
+</div>
+<div id="managing-access" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Managing access<a href="github-1.html#managing-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you have a public repository everyone can fork the repository and make changes to that (forked) copy. You can also invite people to collaborate on your project.</p>
+<p>In order to do that you need to go to the <code>Settings</code> &gt; <code>Manage access</code> page:</p>
+<p><img src="img/manage_access.png" width="814" /></p>
+<p>Here you can invite collaborators and once they have accepted, then can open pull requests and make changes to the repository.</p>
+<p>To find repositories where you are a collaborator on you need to go to <code>Settings</code> &gt; <code>Repositories</code>. Unfortunately these repositories do not show up on your own Repositories tab.</p>
+<p><img src="img/manage_collaborative_repo.png" width="1276" /></p>
+</div>
+<div id="key-points-4" class="section level2 hasAnchor" number="6.11">
+<h2><span class="header-section-number">6.11</span> Key points<a href="github-1.html#key-points-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="keypoints">
+<ul>
+<li>Repositories can be created and deleted on GitHub</li>
+<li>Branches are helpful when you’re working on a new feature/addition without affecting the live <code>main</code> branch</li>
+<li>Forking allows you to work on somebody else’s repository</li>
+<li>Issues are a useful tool to keep track of bugs, enhancements, ideas etc</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="version-control.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="github-and-rstudio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

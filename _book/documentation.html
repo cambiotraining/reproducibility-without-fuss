@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Documentation | Reproducibility without fuss</title>
+  <meta name="description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Documentation | Reproducibility without fuss" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Documentation | Reproducibility without fuss" />
+  
+  <meta name="twitter:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+<meta name="author" content="Martin van Rongen" />
+
+
+<meta name="date" content="2023-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="organisation.html"/>
+<link rel="next" href="version-control.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#purpose-and-aim"><i class="fa fa-check"></i><b>1.2</b> Purpose and aim</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#causes-of-irreproducibility"><i class="fa fa-check"></i><b>1.3</b> Causes of irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#not-a-true-result"><i class="fa fa-check"></i><b>1.3.1</b> Not a true result</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#insufficient-information"><i class="fa fa-check"></i><b>1.3.2</b> Insufficient information</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#issues-with-replication"><i class="fa fa-check"></i><b>1.3.3</b> Issues with replication</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#solutions-to-irreproducibility"><i class="fa fa-check"></i><b>1.4</b> Solutions to irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#the-right-stuff"><i class="fa fa-check"></i><b>1.4.1</b> The right stuff</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#making-reproducing-easy"><i class="fa fa-check"></i><b>1.4.2</b> Making reproducing easy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#forensic-science"><i class="fa fa-check"></i><b>1.5</b> Exercise: forensic science</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#key-points"><i class="fa fa-check"></i><b>1.6</b> Key points</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#authors-and-materials"><i class="fa fa-check"></i><b>1.7</b> Authors and materials</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation-instructions.html"><a href="installation-instructions.html"><i class="fa fa-check"></i><b>2</b> Installation instructions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation-instructions.html"><a href="installation-instructions.html#install-rstudio"><i class="fa fa-check"></i><b>2.1</b> Install RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="installation-instructions.html"><a href="installation-instructions.html#github"><i class="fa fa-check"></i><b>2.2</b> GitHub</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-instructions.html"><a href="installation-instructions.html#git-software"><i class="fa fa-check"></i><b>2.3</b> Git software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organisation.html"><a href="organisation.html"><i class="fa fa-check"></i><b>3</b> Organisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organisation.html"><a href="organisation.html#objectives-1"><i class="fa fa-check"></i><b>3.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="organisation.html"><a href="organisation.html#exercise-tidy-forensic-science"><i class="fa fa-check"></i><b>3.2</b> Exercise: tidy forensic science</a></li>
+<li class="chapter" data-level="3.3" data-path="organisation.html"><a href="organisation.html#exercise-me-me-me"><i class="fa fa-check"></i><b>3.3</b> Exercise: Me, me, me!</a></li>
+<li class="chapter" data-level="3.4" data-path="organisation.html"><a href="organisation.html#key-points-1"><i class="fa fa-check"></i><b>3.4</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>4</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="documentation.html"><a href="documentation.html#objectives-2"><i class="fa fa-check"></i><b>4.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="documentation.html"><a href="documentation.html#libraries"><i class="fa fa-check"></i><b>4.2</b> Libraries</a></li>
+<li class="chapter" data-level="4.3" data-path="documentation.html"><a href="documentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="documentation.html"><a href="documentation.html#r-markdown-header"><i class="fa fa-check"></i><b>4.3.1</b> R Markdown header</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="documentation.html"><a href="documentation.html#markdown-header"><i class="fa fa-check"></i><b>4.4</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="documentation.html"><a href="documentation.html#headings"><i class="fa fa-check"></i><b>4.4.1</b> Headings</a></li>
+<li class="chapter" data-level="4.4.2" data-path="documentation.html"><a href="documentation.html#inline-text-formatting"><i class="fa fa-check"></i><b>4.4.2</b> Inline text formatting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="documentation.html"><a href="documentation.html#line-breaks"><i class="fa fa-check"></i><b>4.4.3</b> Line breaks</a></li>
+<li class="chapter" data-level="4.4.4" data-path="documentation.html"><a href="documentation.html#links"><i class="fa fa-check"></i><b>4.4.4</b> Links</a></li>
+<li class="chapter" data-level="4.4.5" data-path="documentation.html"><a href="documentation.html#lists"><i class="fa fa-check"></i><b>4.4.5</b> Lists</a></li>
+<li class="chapter" data-level="4.4.6" data-path="documentation.html"><a href="documentation.html#inserting-images"><i class="fa fa-check"></i><b>4.4.6</b> Inserting images</a></li>
+<li class="chapter" data-level="4.4.7" data-path="documentation.html"><a href="documentation.html#blocks"><i class="fa fa-check"></i><b>4.4.7</b> Blocks</a></li>
+<li class="chapter" data-level="4.4.8" data-path="documentation.html"><a href="documentation.html#adding-a-table-of-contents"><i class="fa fa-check"></i><b>4.4.8</b> Adding a table of contents</a></li>
+<li class="chapter" data-level="4.4.9" data-path="documentation.html"><a href="documentation.html#adding-references"><i class="fa fa-check"></i><b>4.4.9</b> Adding references</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="documentation.html"><a href="documentation.html#exercise-getting-started"><i class="fa fa-check"></i><b>4.5</b> Exercise: Getting started</a></li>
+<li class="chapter" data-level="4.6" data-path="documentation.html"><a href="documentation.html#r-code-chunks"><i class="fa fa-check"></i><b>4.6</b> R code chunks</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="documentation.html"><a href="documentation.html#chunk-names"><i class="fa fa-check"></i><b>4.6.1</b> Chunk names</a></li>
+<li class="chapter" data-level="4.6.2" data-path="documentation.html"><a href="documentation.html#chunk-options"><i class="fa fa-check"></i><b>4.6.2</b> Chunk options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="documentation.html"><a href="documentation.html#tables"><i class="fa fa-check"></i><b>4.7</b> Tables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="documentation.html"><a href="documentation.html#manually-creating-tables"><i class="fa fa-check"></i><b>4.7.1</b> Manually creating tables</a></li>
+<li class="chapter" data-level="4.7.2" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-rmarkdown"><i class="fa fa-check"></i><b>4.7.2</b> Dynamic tables using <code>rmarkdown</code></a></li>
+<li class="chapter" data-level="4.7.3" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-kableextra"><i class="fa fa-check"></i><b>4.7.3</b> Dynamic tables using <code>kableExtra</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="documentation.html"><a href="documentation.html#composing-figures-with-patchwork"><i class="fa fa-check"></i><b>4.8</b> Composing figures with <code>patchwork</code></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="documentation.html"><a href="documentation.html#adding-plots-together"><i class="fa fa-check"></i><b>4.8.1</b> Adding plots together</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="documentation.html"><a href="documentation.html#exercise-writing-a-short-report"><i class="fa fa-check"></i><b>4.9</b> Exercise: Writing a short report</a></li>
+<li class="chapter" data-level="4.10" data-path="documentation.html"><a href="documentation.html#r-markdown-limitations"><i class="fa fa-check"></i><b>4.10</b> R Markdown limitations</a></li>
+<li class="chapter" data-level="4.11" data-path="documentation.html"><a href="documentation.html#key-points-2"><i class="fa fa-check"></i><b>4.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>5</b> Version control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="version-control.html"><a href="version-control.html#objectives-3"><i class="fa fa-check"></i><b>5.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="version-control.html"><a href="version-control.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="version-control.html"><a href="version-control.html#centralised-version-control-systems"><i class="fa fa-check"></i><b>5.3</b> Centralised version control systems</a></li>
+<li class="chapter" data-level="5.4" data-path="version-control.html"><a href="version-control.html#distributed-version-control-systems"><i class="fa fa-check"></i><b>5.4</b> Distributed version control systems</a></li>
+<li class="chapter" data-level="5.5" data-path="version-control.html"><a href="version-control.html#git-workflow"><i class="fa fa-check"></i><b>5.5</b> Git workflow</a></li>
+<li class="chapter" data-level="5.6" data-path="version-control.html"><a href="version-control.html#branches"><i class="fa fa-check"></i><b>5.6</b> Branches</a></li>
+<li class="chapter" data-level="5.7" data-path="version-control.html"><a href="version-control.html#files-under-version-control"><i class="fa fa-check"></i><b>5.7</b> Files under version control</a></li>
+<li class="chapter" data-level="5.8" data-path="version-control.html"><a href="version-control.html#glossary"><i class="fa fa-check"></i><b>5.8</b> Glossary</a></li>
+<li class="chapter" data-level="5.9" data-path="version-control.html"><a href="version-control.html#key-points-3"><i class="fa fa-check"></i><b>5.9</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-1.html"><a href="github-1.html"><i class="fa fa-check"></i><b>6</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-1.html"><a href="github-1.html#objectives-4"><i class="fa fa-check"></i><b>6.1</b> Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="github-1.html"><a href="github-1.html#starting-on-github"><i class="fa fa-check"></i><b>6.2</b> Starting on GitHub</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="github-1.html"><a href="github-1.html#creating-a-new-repository"><i class="fa fa-check"></i><b>6.2.1</b> Creating a new repository</a></li>
+<li class="chapter" data-level="6.2.2" data-path="github-1.html"><a href="github-1.html#deleting-a-repository"><i class="fa fa-check"></i><b>6.2.2</b> Deleting a repository</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="github-1.html"><a href="github-1.html#exercise-new-repository"><i class="fa fa-check"></i><b>6.3</b> Exercise: New repository</a></li>
+<li class="chapter" data-level="6.4" data-path="github-1.html"><a href="github-1.html#creating-a-new-file-optional"><i class="fa fa-check"></i><b>6.4</b> Creating a new file (optional)</a></li>
+<li class="chapter" data-level="6.5" data-path="github-1.html"><a href="github-1.html#create-branch"><i class="fa fa-check"></i><b>6.5</b> Creating a new branch (optional)</a></li>
+<li class="chapter" data-level="6.6" data-path="github-1.html"><a href="github-1.html#pull-requests"><i class="fa fa-check"></i><b>6.6</b> Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.7" data-path="github-1.html"><a href="github-1.html#exercise-pull-requests-optional"><i class="fa fa-check"></i><b>6.7</b> Exercise: Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.8" data-path="github-1.html"><a href="github-1.html#forking-projects"><i class="fa fa-check"></i><b>6.8</b> Forking projects</a></li>
+<li class="chapter" data-level="6.9" data-path="github-1.html"><a href="github-1.html#creating-issues"><i class="fa fa-check"></i><b>6.9</b> Creating issues</a></li>
+<li class="chapter" data-level="6.10" data-path="github-1.html"><a href="github-1.html#managing-access"><i class="fa fa-check"></i><b>6.10</b> Managing access</a></li>
+<li class="chapter" data-level="6.11" data-path="github-1.html"><a href="github-1.html#key-points-4"><i class="fa fa-check"></i><b>6.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html"><i class="fa fa-check"></i><b>7</b> GitHub and RStudio</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#objectives-5"><i class="fa fa-check"></i><b>7.1</b> Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#using-github-from-rstudio"><i class="fa fa-check"></i><b>7.2</b> Using GitHub from RStudio</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#linking-git-and-rstudio"><i class="fa fa-check"></i><b>7.2.1</b> Linking Git and RStudio</a></li>
+<li class="chapter" data-level="7.2.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#starting-a-new-project-under-git-control"><i class="fa fa-check"></i><b>7.2.2</b> Starting a new project under Git control</a></li>
+<li class="chapter" data-level="7.2.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#changes-and-your-remote-repository"><i class="fa fa-check"></i><b>7.2.3</b> Changes and your remote repository</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-version-control-in-rstudio"><i class="fa fa-check"></i><b>7.3</b> Exercise: Version control in RStudio</a></li>
+<li class="chapter" data-level="7.4" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-branching-and-changes"><i class="fa fa-check"></i><b>7.4</b> Exercise: Branching and changes</a></li>
+<li class="chapter" data-level="7.5" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#key-points-5"><i class="fa fa-check"></i><b>7.5</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducibility without fuss</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="documentation" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Documentation<a href="documentation.html#documentation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objectives-2" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Objectives<a href="documentation.html#objectives-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<ul>
+<li>Be able to use basic markdown syntax</li>
+<li>Understand how to use R Markdown by integrating text formatting and R code</li>
+<li>Be able to create dynamic tables in R</li>
+<li>Know how to compose multipanel figures programmatically in R</li>
+</ul>
+</div>
+<p>Part of these materials were originally developed by Alexia Cardona<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+</div>
+<div id="libraries" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Libraries<a href="documentation.html#libraries" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Libraries</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left">A collection of R packages designed for data science</td>
+</tr>
+<tr class="even">
+<td align="left"><code>rmarkdown</code></td>
+<td align="left">Converts markdown and R code into rendered documents</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>kableExtra</code></td>
+<td align="left">Generates dynamic tables</td>
+</tr>
+<tr class="even">
+<td align="left"><code>patchwork</code></td>
+<td align="left">Composes plots generated by <code>ggplot()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="rmarkdown" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> RMarkdown<a href="documentation.html#rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://rmarkdown.rstudio.com">R Markdown</a> is integrated in RStudio and enables you to create documents, reports, presentations and dashboards. This in turn helps you to communicate your research better than using scripts alone. It does this because it supports extensive text formatting and easy code integration. That in turns enables you to walk a reader through an analysis much more easily than you would be able to do using comments in a script.</p>
+<p>An R Markdown file is made up of 3 basic components:</p>
+<ul>
+<li>header</li>
+<li>markdown</li>
+<li>R code chunks</li>
+</ul>
+<p>Here we will assume that the output of our report is an <code>.html</code> file. HTML files are files for web pages. This means that the report that we will generate can be easily deployed on the web.</p>
+<p>R Markdown can also be used to generate PDFs, Microsoft Word or Latex documents, among other things.</p>
+<div id="r-markdown-header" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> R Markdown header<a href="documentation.html#r-markdown-header" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The markdown document starts with an optional header in YAML (<em>YAML Ain’t Markup Language</em>) format known as the YAML metadata. Oh yes, programmers have a very particular sense of humour…</p>
+<p>In the example below, the <code>title</code>, <code>author</code> and <code>date</code> are specified in the header. Other options can be specified in the header such as table of content which we will look at later on in the course.</p>
+<pre><code>---
+title: &quot;Reproducibility without fuss&quot;
+author:  &quot;Martin van Rongen&quot;
+date: 20 Jul 1969
+---</code></pre>
+<p>To create a new R Markdown file go to <code>File -&gt; New File -&gt; R Markdown</code>. To generate the output file (in this case an html document), press the <code>knit</code> button:
+<img src="img/knit_button.png" width="67" /></p>
+<p>Alternatively, use the corresponding keyboard shortcut (Mac <code>Cmd + Shift + K</code>, Windows <code>Ctrl + Shift + K</code>).</p>
+</div>
+</div>
+<div id="markdown-header" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Markdown<a href="documentation.html#markdown-header" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The text following the header in an Rmarkdown file is in Markdown syntax. This is the syntax that gets converted to HTML format once we click on the Knit button or the Build website button (yes, you can deploy whole websites using R Markdown). The philosophy behind Markdown is that it should be easy to write and easy to read.</p>
+<p>The full documentation of the Markdown syntax can be found at <a href="https://pandoc.org/MANUAL.html" class="uri">https://pandoc.org/MANUAL.html</a>. However this might be a bit of information overload when you’re starting. Therefore below is a simplified version of the Markdown syntax.</p>
+<div id="headings" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Headings<a href="documentation.html#headings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Below is the <code>Markdown code</code> you need to use to specify headings at different levels and the rendered output respectively below the code:</p>
+<p><code># Heading 1</code></p>
+<p style="font-weight:500; font-size:34px">
+Heading 1
+</p>
+<p><code>## Heading 2</code></p>
+<p style="font-weight:500; font-size:30px">
+Heading 2
+</p>
+<p><code>### Heading 3</code></p>
+<p style="font-weight:500; font-size:24px">
+Heading 3
+</p>
+<p><code>#### Heading 4</code></p>
+<p style="font-weight:500; font-size:18px">
+Heading 4
+</p>
+</div>
+<div id="inline-text-formatting" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Inline text formatting<a href="documentation.html#inline-text-formatting" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To make text <strong>bold</strong> use <code>**double asterisks**</code> or <code>__double underscores__</code>.<br />
+To make text <em>italic</em> use <code>*asterisks*</code> or <code>_underscores_</code>.<br />
+To make text <sup>superscript</sup> use <code>^caret^</code>.<br />
+To make text <sub>subscript</sub> use <code>~tilde~</code>.<br />
+To mark text as <code>inline code</code> use <code>`backticks`</code>.<br />
+To <del>strikethrough</del> text use <code>~~double tilde~~</code>.</p>
+</div>
+<div id="line-breaks" class="section level3 hasAnchor" number="4.4.3">
+<h3><span class="header-section-number">4.4.3</span> Line breaks<a href="documentation.html#line-breaks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To create a line break, put more than 2 spaces at the end of a sentence or place <code>\</code> in a new line followed by a new line <img src="img/enter.png" width="20"/>.</p>
+</div>
+<div id="links" class="section level3 hasAnchor" number="4.4.4">
+<h3><span class="header-section-number">4.4.4</span> Links<a href="documentation.html#links" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="linking-text-to-headers" class="section level4 hasAnchor" number="4.4.4.1">
+<h4><span class="header-section-number">4.4.4.1</span> Linking text to Headers<a href="documentation.html#linking-text-to-headers" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To link text to a header you would need to specify an identification tag next to a header as follows:</p>
+<p><code># Markdown {#markdown-header}</code></p>
+<p>Then to link text to this header use <code>[link to header](#markdown-header)</code>. This will be rendered as <a href="documentation.html#markdown-header">link to header</a>.</p>
+</div>
+<div id="linking-text-to-a-webpage" class="section level4 hasAnchor" number="4.4.4.2">
+<h4><span class="header-section-number">4.4.4.2</span> Linking text to a webpage<a href="documentation.html#linking-text-to-a-webpage" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To create a link to a webpage use <code>[text of link](https://www.gapminder.org)</code>. This is rendered as <a href="https://www.gapminder.org">text of link</a>.</p>
+</div>
+<div id="footnotes" class="section level4 hasAnchor" number="4.4.4.3">
+<h4><span class="header-section-number">4.4.4.3</span> Footnotes<a href="documentation.html#footnotes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To indicate a footnote use<code>[^2]</code> and, for example, indicate another one as<code>[^3]</code> (I already used <code>[^1]</code>!) and then specify the wordings of the footnotes as:</p>
+<p><code>[^2]: This is a footnote.</code><br />
+<code>[^3]: Another footnote.</code></p>
+<p>You do not need to put footnotes at the end of the document for them to be rendered there. This example is rendered as follows:</p>
+<p>To indicate a footnote use<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and, for example, indicate another one as<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and then specify the wordings of the footnotes as:</p>
+</div>
+</div>
+<div id="lists" class="section level3 hasAnchor" number="4.4.5">
+<h3><span class="header-section-number">4.4.5</span> Lists<a href="documentation.html#lists" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ordered-lists" class="section level4 hasAnchor" number="4.4.5.1">
+<h4><span class="header-section-number">4.4.5.1</span> Ordered lists<a href="documentation.html#ordered-lists" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>To create an ordered list use the following syntax:</p>
+<pre><code>1. Item 1
+2. Item 2
+3. Item 3</code></pre>
+<p>This is rendered as:</p>
+<ol style="list-style-type: decimal">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
+<p>Use 4 spaces to indent an item if you would like to have sub-lists:</p>
+<pre><code>1. Item 1
+2. Item 2
+3. Item 3
+    a. Item 3a
+        i.  Item 3ai
+        ii. Item 3aii
+    b. Item 3b
+    c. Item 3c
+4. Item 4</code></pre>
+<ol style="list-style-type: decimal">
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3
+<ol style="list-style-type: lower-alpha">
+<li>Item 3a
+<ol style="list-style-type: lower-roman">
+<li>Item 3ai</li>
+<li>Item 3aii</li>
+</ol></li>
+<li>Item 3b</li>
+<li>Item 3c</li>
+</ol></li>
+<li>Item 4</li>
+</ol>
+</div>
+<div id="unordered-lists" class="section level4 hasAnchor" number="4.4.5.2">
+<h4><span class="header-section-number">4.4.5.2</span> Unordered lists<a href="documentation.html#unordered-lists" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>In an unordered bullet list, each item begins with <code>*</code>, <code>+</code> or <code>-</code>. Example:</p>
+<pre><code>* Item 1
+* Item 2
+* Item 3
+    * Item 3a
+        *  Item 3ai
+        * Item 3aii
+    * Item 3b
+    * Item 3c
+* Item 4</code></pre>
+<p>Will be rendered as:</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3
+<ul>
+<li>Item 3a
+<ul>
+<li>Item 3ai</li>
+<li>Item 3aii</li>
+</ul></li>
+<li>Item 3b</li>
+<li>Item 3c</li>
+</ul></li>
+<li>Item 4</li>
+</ul>
+</div>
+<div id="tasks-list" class="section level4 hasAnchor" number="4.4.5.3">
+<h4><span class="header-section-number">4.4.5.3</span> Tasks list<a href="documentation.html#tasks-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Tasks list can be done using the following syntax:</p>
+<pre><code>- [ ] an unchecked task list item
+- [x] checked item</code></pre>
+<p>This will be rendered as:</p>
+<ul class="task-list">
+<li><input type="checkbox" />an unchecked task list item</li>
+<li><input type="checkbox" checked="" />checked item</li>
+</ul>
+</div>
+</div>
+<div id="inserting-images" class="section level3 hasAnchor" number="4.4.6">
+<h3><span class="header-section-number">4.4.6</span> Inserting images<a href="documentation.html#inserting-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To insert an image use the following syntax: <code>![Figure caption](path/to/image)</code>. Example:</p>
+<p><code>![R Logo](img/Rlogo.png)</code></p>
+<p>Will be rendered as:</p>
+<div class="float">
+<img src="img/Rlogo.png" alt="R Logo" />
+<div class="figcaption">R Logo</div>
+</div>
+<p>You can adjust the size of the image by adding a <code>width</code> and <code>height</code> in pixels in between curly brackets, like this:</p>
+<p><code>![R Logo](img/Rlogo.png){width=100px height=100px}</code></p>
+<p>will plot like</p>
+<div class="float">
+<img src="img/Rlogo.png" width="100" height="100" alt="R Logo" />
+<div class="figcaption">R Logo</div>
+</div>
+</div>
+<div id="blocks" class="section level3 hasAnchor" number="4.4.7">
+<h3><span class="header-section-number">4.4.7</span> Blocks<a href="documentation.html#blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Blocks or quotes in the notebook can be created by using the <code>&gt;</code> sign as follows:</p>
+<pre><code>&gt; &quot;Life can be great, when you try something new.&quot;
+&gt;
+&gt; _Kevin the koala_</code></pre>
+<p>This is rendered as:</p>
+<p><img src="img/block_kevin.png" width="75%" /></p>
+<p>If you would like to add <strong>code blocks</strong>, use <code>```</code> before and after the code as follows:</p>
+<pre><code>```
+print(&quot;Hello world&quot;)
+x &lt;- 1 + 2
+print(x)
+```</code></pre>
+<p>This will be rendered as:</p>
+<pre><code>print(&quot;Hello world&quot;)
+x &lt;- 1 + 2
+print(x)</code></pre>
+<p> </p>
+</div>
+<div id="adding-a-table-of-contents" class="section level3 hasAnchor" number="4.4.8">
+<h3><span class="header-section-number">4.4.8</span> Adding a table of contents<a href="documentation.html#adding-a-table-of-contents" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To add a table of contents to your report add the following to the YAML header you need to specify the output (in this case a <code>html_document</code>) and set <code>toc</code> to <code>true</code>. If you want to make sure your table of contents stays visible even whilst scrolling, then you need to float it, using <code>toc_float: true</code>.</p>
+<pre><code>output:
+  html_document:
+    toc: true
+    toc_float: true</code></pre>
+<p>By default all headings up to level 3 headings are displayed in the table of contents. You can adjust this by specifying <code>toc_depth</code> as following:</p>
+<pre><code>output:
+  html_document:
+    toc: true
+    toc_depth: 4</code></pre>
+</div>
+<div id="adding-references" class="section level3 hasAnchor" number="4.4.9">
+<h3><span class="header-section-number">4.4.9</span> Adding references<a href="documentation.html#adding-references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Adding references and citations in Markdown is not as easy as reference manager software such as Mendeley. To be able to create citations you will need to create a bibliography file with all the references in it. Here is an <a href="references.bib">example of a bibliography file</a>. The bibliography file has to be placed in the same folder as the one where the <code>.Rmd</code> file is. Next, add the following to the YAML header:</p>
+<pre><code>bibliography: references.bib
+link-citations: yes</code></pre>
+<p>Your YAML header should now look like:</p>
+<pre><code>---
+title: &quot;Reproducibility without fuss&quot;
+author:  Martin van Rongen
+date: 19 Dec 1972
+bibliography: references.bib
+link-citations: yes
+---</code></pre>
+<p>To cite a reference use the <code>@</code> together with the ID of the reference. Example:</p>
+<p><code>Citation to my paper @cardona2014 and @cardona2019</code></p>
+<p>Will be rendered as:</p>
+<p>Citation to my paper <span class="citation">L. A. A. Cardona Alexia AND Pagani (2014)</span> and <span class="citation">A. Cardona et al. (2019)</span></p>
+<p>To add the bibliography at the end of the report add a References heading at the end of the report:</p>
+<p><code># References</code></p>
+<p>See <a href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html" class="uri">https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html</a> for more information.</p>
+</div>
+</div>
+<div id="exercise-getting-started" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Exercise: Getting started<a href="documentation.html#exercise-getting-started" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-4" class="exercise"><strong>Exercise 4.1  </strong></span>To get you started, I’d like you to do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Create an <code>R Project</code> if you haven’t done so already</li>
+<li>Start a new <code>R Markdown</code> file and save it in the appropriate subfolder (e.g. <code>notebooks</code>)</li>
+<li>Think about one of your own projects and use that to come up with a title.</li>
+<li>Create three levels of headings, sub-dividing your project and try out some of the inline text formatting.</li>
+<li>Add a link to the <a href="https://www.gapminder.org">https://www.gapminder.org</a> website (or any other website).</li>
+<li>Use <code>knit</code> to render an html document and see if it looks like you expected.</li>
+</ol>
+</div>
+</div>
+<div id="r-code-chunks" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> R code chunks<a href="documentation.html#r-code-chunks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>So far we have not used any R code and all the code we used so far is in Markdown. As the name suggests, Rmarkdown files contain markdown and R. Rmarkdown files have a <code>.Rmd</code> extension. Using R in a markdown document makes sense if we integrate our analysis in our report. Some operations that we might need to do are; loading our data set, performing some operations on the data set and displaying results, either in a table or in a plot. We will be doing all this in the following sections.</p>
+<p>If you would like to insert R code inside the notebook you will have to insert it inside an R code chunk to be able to execute it. To do this click on the <code>Insert</code> button at the top of the Source panel in RStudio:</p>
+<p><img src="img/insert_r_chunk.png" width="150px" style="display: block; margin: auto;" /></p>
+<p>Or use the associated shortcut (Mac <code>Cmd + Option + I</code>, Windows <code>Ctrl + Alt + I</code>).</p>
+<p>This creates an <strong>R code chunk</strong> as follows:</p>
+<p><img src="img/r_chunk.png" width="749" style="display: block; margin: auto;" /></p>
+<p>Alternatively, you can type the r code chunk (although I recommended using the keyboard shortcut). The R code should be placed in between the triple backticks. Note that on the right hand side of the R code chunk there is a green “play” button that will run the R code chunk if pressed. By default, when the Rmarkdown document is knitted, the R code will be executed and the R code chunk is displayed before the executed code.</p>
+<p>To run a chunk you can use the <code>Run</code> button or the shortcut (Mac <code>Cmd + Shift + Enter</code>, Windows <code>Ctrl + Shift + Enter</code>).</p>
+<div id="chunk-names" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> Chunk names<a href="documentation.html#chunk-names" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is possible to give names to chunks using <code>```{r chunk_name}</code>. This has several advantages:</p>
+<ul>
+<li>You can navigate more easily through your R Notebook using the drop-down code navigator:</li>
+</ul>
+<p><img src="img/code_navigator.png" width="266" style="display: block; margin: auto;" /></p>
+<ul>
+<li><p>Graphics produced by the chunks will have meaningful names based on the chunk name, which is a big improvement over <code>Untitled1.png</code>.</p></li>
+<li><p>One chunk name has special meaning: <code>setup</code>. In R Notebooks the chunk named <code>setup</code> will automatically run only once, before any other chunks are run.</p></li>
+</ul>
+</div>
+<div id="chunk-options" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> Chunk options<a href="documentation.html#chunk-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can control the output of chunks with different <em>options</em> in the chunk header (e.g. <code>{r, include = FALSE}</code>).</p>
+<p>These chunk options include:</p>
+<ul>
+<li><p><code>eval = FALSE</code> prevents code from being evaluated. No code is run and no output displayed. Useful to display example code or avoiding commenting out many lines.</p></li>
+<li><p><code>include = FALSE</code> do not display the code and results in the page after it is knitted. The R code however still runs and therefore the variables or results in this code chunk can be used by the other chunks.</p></li>
+<li><p><code>echo = FALSE</code> does not display the code, but it displays the results in the rendered file.</p></li>
+<li><p><code>message = FALSE</code> or <code>warning = FALSE</code> prevents messages or warnings from being displayed in the rendered file.</p></li>
+</ul>
+<p>There are almost 60 options by <code>knitr</code> that you can use to customise your code blocks. A full list of options can be found <a href="https://yihui.org/knitr/options/">here</a>.</p>
+</div>
+</div>
+<div id="tables" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Tables<a href="documentation.html#tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Tables can be created manually or dynamically.</p>
+<div id="manually-creating-tables" class="section level3 hasAnchor" number="4.7.1">
+<h3><span class="header-section-number">4.7.1</span> Manually creating tables<a href="documentation.html#manually-creating-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Although probably only useful for small tables, you can manually create tables, using <code>|</code>and <code>-</code> as follows:</p>
+<pre><code>| country_id  | country     |
+| ----------- | ----------- |
+| afg         | Afghanistan |
+| ago         | Angola      |</code></pre>
+<p>This is rendered as:</p>
+<table>
+<thead>
+<tr class="header">
+<th>country_id</th>
+<th>country</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>afg</td>
+<td>Afghanistan</td>
+</tr>
+<tr class="even">
+<td>ago</td>
+<td>Angola</td>
+</tr>
+</tbody>
+</table>
+<p>Table alignments can be done using the following syntax:</p>
+<pre><code>| country_id (left) | country (centre) | world_region (right) |
+| :---              | :----:           | ---:                 |
+| afg               | Afghanistan      | south_asia           |
+| ago               | Angola           | sub_saharan_africa   |</code></pre>
+<p>This is rendered as:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">country_id (left)</th>
+<th align="center">country (centre)</th>
+<th align="right">world_region (right)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">afg</td>
+<td align="center">Afghanistan</td>
+<td align="right">south_asia</td>
+</tr>
+<tr class="even">
+<td align="left">ago</td>
+<td align="center">Angola</td>
+<td align="right">sub_saharan_africa</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="dynamic-tables-using-rmarkdown" class="section level3 hasAnchor" number="4.7.2">
+<h3><span class="header-section-number">4.7.2</span> Dynamic tables using <code>rmarkdown</code><a href="documentation.html#dynamic-tables-using-rmarkdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Clearly creating a large table this way is not very efficient or often even feasible when dealing with larger data sets. Furthermore, it goes against the principle of trying to make your research reproducible because the data are not generated through code.</p>
+<p>R Markdown has some basic functionality to create tables in HTML. The <code>paged_table()</code> function creates a table that supports paging rows and columns. When we use this on the built-in <code>iris</code> data set it looks like this:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="documentation.html#cb16-1" tabindex="-1"></a><span class="fu">paged_table</span>(iris)</span></code></pre></div>
+<p><img src="img/iris_paged_table.png" width="100%" /></p>
+</div>
+<div id="dynamic-tables-using-kableextra" class="section level3 hasAnchor" number="4.7.3">
+<h3><span class="header-section-number">4.7.3</span> Dynamic tables using <code>kableExtra</code><a href="documentation.html#dynamic-tables-using-kableextra" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Apart from the basic functions available in <code>rmarkdown</code>, we can also use the <code>kableExtra</code> package, which uses the <code>knitr::kable()</code> function to generate tables. It allows you to build complex tables and adjust the table styles easily.</p>
+<p>More information can be found <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">here</a>.</p>
+<p>Let’s explore that a bit more by generating a table that displays the <code>iris</code> data set.</p>
+<p>The table is styled in twitter-fashion using <code>kable_styling()</code>, with striped rows that highlight when you hover over them.</p>
+<p>The table is embedded in a scroll box of a fixed dimension using <code>scroll_box</code>.</p>
+<p>Here I’m using the pipe symbol (<code>%&gt;%</code>) to pipe the output from one function to the next.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="documentation.html#cb17-1" tabindex="-1"></a>iris <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="documentation.html#cb17-2" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot;Iris data set&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="documentation.html#cb17-3" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>), </span>
+<span id="cb17-4"><a href="documentation.html#cb17-4" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="documentation.html#cb17-5" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>, <span class="at">height =</span> <span class="st">&quot;400px&quot;</span>)</span></code></pre></div>
+<p><img src="img/iris_kableExtra.png" width="75%" /></p>
+<p>Somewhat frustratingly, pagination is not possible with <code>kable</code>. So if you have a long table, you are best off using the <code>paged_table()</code> function from the <code>rmarkdown</code> package.</p>
+</div>
+</div>
+<div id="composing-figures-with-patchwork" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Composing figures with <code>patchwork</code><a href="documentation.html#composing-figures-with-patchwork" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Apart from using a markdown language to render your text output, it can also be very useful to compose figures programmatically. Of course it is possible to generate figures with multiple panels using image editing software, but that does not really fit in with the reproducibility ethos, does it?</p>
+<p>So how can we do this in R? There is a package that allows you to do just that for figures generated by<code>ggplot()</code>: <a href="https://cran.r-project.org/web/packages/patchwork/vignettes/patchwork.html">`patchwork’</a>.</p>
+<p>If you need to install it, run the following code in your <strong>console</strong>:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="documentation.html#cb18-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;patchwork&quot;</span>)</span></code></pre></div>
+<p>Then load the library:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="documentation.html#cb19-1" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
+<p>Patchwork requires you to assign plots to an object and then you can use mathematical operators such as <code>+</code>, <code>|</code>, <code>/</code> to organise your figures.</p>
+<p>Let’s create three figures and go through the options. You can just copy/paste the code, because the figures themselves are not important. It’s the use of <code>patchwork</code> we’re focussing on.</p>
+<p>Plots:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="documentation.html#cb20-1" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="documentation.html#cb20-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Petal.Width,</span>
+<span id="cb20-3"><a href="documentation.html#cb20-3" tabindex="-1"></a>             <span class="at">y =</span> Petal.Length)) <span class="sc">+</span></span>
+<span id="cb20-4"><a href="documentation.html#cb20-4" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb20-5"><a href="documentation.html#cb20-5" tabindex="-1"></a></span>
+<span id="cb20-6"><a href="documentation.html#cb20-6" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7"><a href="documentation.html#cb20-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Species,</span>
+<span id="cb20-8"><a href="documentation.html#cb20-8" tabindex="-1"></a>             <span class="at">y =</span> Sepal.Width)) <span class="sc">+</span></span>
+<span id="cb20-9"><a href="documentation.html#cb20-9" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span>
+<span id="cb20-10"><a href="documentation.html#cb20-10" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="documentation.html#cb20-11" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> iris <span class="sc">%&gt;%</span> </span>
+<span id="cb20-12"><a href="documentation.html#cb20-12" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Sepal.Length,</span>
+<span id="cb20-13"><a href="documentation.html#cb20-13" tabindex="-1"></a>             <span class="at">y =</span> Sepal.Width,</span>
+<span id="cb20-14"><a href="documentation.html#cb20-14" tabindex="-1"></a>             <span class="at">colour =</span> Species)) <span class="sc">+</span></span>
+<span id="cb20-15"><a href="documentation.html#cb20-15" tabindex="-1"></a>  <span class="fu">geom_jitter</span>()</span></code></pre></div>
+<div id="adding-plots-together" class="section level3 hasAnchor" number="4.8.1">
+<h3><span class="header-section-number">4.8.1</span> Adding plots together<a href="documentation.html#adding-plots-together" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The simplest way to add plots together using <code>patchwork</code> is to use the <code>+</code> operator:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="documentation.html#cb21-1" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3</span></code></pre></div>
+<p><img src="documentation_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>You can control how the plots are displayed. For example, we can put the third plot (<code>p3</code> below the others):</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="documentation.html#cb22-1" tabindex="-1"></a>(p1 <span class="sc">+</span> p2) <span class="sc">/</span> p3</span></code></pre></div>
+<p><img src="documentation_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>Or we can stretch out the first plot over two rows:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="documentation.html#cb23-1" tabindex="-1"></a>p1 <span class="sc">|</span> (p2 <span class="sc">/</span> p3)</span></code></pre></div>
+<p><img src="documentation_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>We can then further customise the plot. We can add annotations using <code>plot_annotation</code>:</p>
+<ul>
+<li>add a <strong>title</strong> using <code>title =</code></li>
+<li>add <strong>panel labels</strong> using <code>tag_levels =</code> (it takes different arguments, e.g. <code>A</code> for capital letters, <code>a</code> for lower case letters, <code>I</code> for Roman numerals etc.)</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="documentation.html#cb24-1" tabindex="-1"></a>(p1 <span class="sc">|</span> (p2 <span class="sc">/</span> p3)) <span class="sc">+</span></span>
+<span id="cb24-2"><a href="documentation.html#cb24-2" tabindex="-1"></a>  <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&quot;Iris data set&quot;</span>,</span>
+<span id="cb24-3"><a href="documentation.html#cb24-3" tabindex="-1"></a>                  <span class="at">tag_levels =</span> <span class="st">&quot;A&quot;</span>)</span></code></pre></div>
+<p><img src="documentation_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>There are more options available, which you can find on the <a href="https://patchwork.data-imaginist.com/index.html">patchwork website</a>.</p>
+</div>
+</div>
+<div id="exercise-writing-a-short-report" class="section level2 hasAnchor" number="4.9">
+<h2><span class="header-section-number">4.9</span> Exercise: Writing a short report<a href="documentation.html#exercise-writing-a-short-report" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-5" class="exercise"><strong>Exercise 4.2  </strong></span>For this exercise I’d like you to create a new R Markdown file, and do the following:</p>
+<ol style="list-style-type: decimal">
+<li>Create 3 heading levels, as previously done</li>
+<li>Add a table of contents</li>
+<li>Using the default <code>mtcars</code> data set, create
+<ol style="list-style-type: lower-alpha">
+<li>a dynamic table</li>
+<li>create 2 plots in ggplot (e.g. scatter plot of <code>disp</code> vs <code>hp</code>; box plot of <code>carb</code> vs <code>disp</code>)</li>
+<li>create a two-panel figure in <code>patchwork</code>, with a title, caption and panel tag</li>
+<li><code>knit</code> the document and admire your results</li>
+</ol></li>
+</ol>
+</div>
+</div>
+<div id="r-markdown-limitations" class="section level2 hasAnchor" number="4.10">
+<h2><span class="header-section-number">4.10</span> R Markdown limitations<a href="documentation.html#r-markdown-limitations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Some limitations that R Markdown has:</p>
+<ul>
+<li>Figure and table numbering is not supported. There is still a way around this, by using third-party packages <em>e.g.,</em> <a href="https://cran.r-project.org/web/packages/captioner/vignettes/using_captioner.html">captioner</a> or <a href="https://bookdown.org/yihui/rmarkdown-cookbook/figure-number.html">bookdown</a> (which is a great package to use when you want to group your analysis together in a book format!).</li>
+<li>If you are looking at specific customisations that are different from the default Markdown format, <em>e.g.,</em> headings using different font specifications, then this gets tricky and markdown might not be the best approach.</li>
+</ul>
+</div>
+<div id="key-points-2" class="section level2 hasAnchor" number="4.11">
+<h2><span class="header-section-number">4.11</span> Key points<a href="documentation.html#key-points-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="keypoints">
+<ul>
+<li>Markup languages allow you to perform document formatting in a programmatic way</li>
+<li>Useful for large documents</li>
+<li>Increases reproducibility of documentation</li>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>These materials have been adapted from <a href="https://cambiotraining.github.io/reproducibility-training/rmarkdown.html">Reproducible research in R</a>, which has been developed by Alexia Cardona.<a href="documentation.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>This is a footnote.<a href="documentation.html#fnref2" class="footnote-back">↩︎</a></p></li>
+<li id="fn3"><p>Another footnote.<a href="documentation.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="organisation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="version-control.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Version control | Reproducibility without fuss</title>
+  <meta name="description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Version control | Reproducibility without fuss" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Version control | Reproducibility without fuss" />
+  
+  <meta name="twitter:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+<meta name="author" content="Martin van Rongen" />
+
+
+<meta name="date" content="2023-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="documentation.html"/>
+<link rel="next" href="github-1.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#purpose-and-aim"><i class="fa fa-check"></i><b>1.2</b> Purpose and aim</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#causes-of-irreproducibility"><i class="fa fa-check"></i><b>1.3</b> Causes of irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#not-a-true-result"><i class="fa fa-check"></i><b>1.3.1</b> Not a true result</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#insufficient-information"><i class="fa fa-check"></i><b>1.3.2</b> Insufficient information</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#issues-with-replication"><i class="fa fa-check"></i><b>1.3.3</b> Issues with replication</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#solutions-to-irreproducibility"><i class="fa fa-check"></i><b>1.4</b> Solutions to irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#the-right-stuff"><i class="fa fa-check"></i><b>1.4.1</b> The right stuff</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#making-reproducing-easy"><i class="fa fa-check"></i><b>1.4.2</b> Making reproducing easy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#forensic-science"><i class="fa fa-check"></i><b>1.5</b> Exercise: forensic science</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#key-points"><i class="fa fa-check"></i><b>1.6</b> Key points</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#authors-and-materials"><i class="fa fa-check"></i><b>1.7</b> Authors and materials</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation-instructions.html"><a href="installation-instructions.html"><i class="fa fa-check"></i><b>2</b> Installation instructions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation-instructions.html"><a href="installation-instructions.html#install-rstudio"><i class="fa fa-check"></i><b>2.1</b> Install RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="installation-instructions.html"><a href="installation-instructions.html#github"><i class="fa fa-check"></i><b>2.2</b> GitHub</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-instructions.html"><a href="installation-instructions.html#git-software"><i class="fa fa-check"></i><b>2.3</b> Git software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organisation.html"><a href="organisation.html"><i class="fa fa-check"></i><b>3</b> Organisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organisation.html"><a href="organisation.html#objectives-1"><i class="fa fa-check"></i><b>3.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="organisation.html"><a href="organisation.html#exercise-tidy-forensic-science"><i class="fa fa-check"></i><b>3.2</b> Exercise: tidy forensic science</a></li>
+<li class="chapter" data-level="3.3" data-path="organisation.html"><a href="organisation.html#exercise-me-me-me"><i class="fa fa-check"></i><b>3.3</b> Exercise: Me, me, me!</a></li>
+<li class="chapter" data-level="3.4" data-path="organisation.html"><a href="organisation.html#key-points-1"><i class="fa fa-check"></i><b>3.4</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>4</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="documentation.html"><a href="documentation.html#objectives-2"><i class="fa fa-check"></i><b>4.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="documentation.html"><a href="documentation.html#libraries"><i class="fa fa-check"></i><b>4.2</b> Libraries</a></li>
+<li class="chapter" data-level="4.3" data-path="documentation.html"><a href="documentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="documentation.html"><a href="documentation.html#r-markdown-header"><i class="fa fa-check"></i><b>4.3.1</b> R Markdown header</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="documentation.html"><a href="documentation.html#markdown-header"><i class="fa fa-check"></i><b>4.4</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="documentation.html"><a href="documentation.html#headings"><i class="fa fa-check"></i><b>4.4.1</b> Headings</a></li>
+<li class="chapter" data-level="4.4.2" data-path="documentation.html"><a href="documentation.html#inline-text-formatting"><i class="fa fa-check"></i><b>4.4.2</b> Inline text formatting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="documentation.html"><a href="documentation.html#line-breaks"><i class="fa fa-check"></i><b>4.4.3</b> Line breaks</a></li>
+<li class="chapter" data-level="4.4.4" data-path="documentation.html"><a href="documentation.html#links"><i class="fa fa-check"></i><b>4.4.4</b> Links</a></li>
+<li class="chapter" data-level="4.4.5" data-path="documentation.html"><a href="documentation.html#lists"><i class="fa fa-check"></i><b>4.4.5</b> Lists</a></li>
+<li class="chapter" data-level="4.4.6" data-path="documentation.html"><a href="documentation.html#inserting-images"><i class="fa fa-check"></i><b>4.4.6</b> Inserting images</a></li>
+<li class="chapter" data-level="4.4.7" data-path="documentation.html"><a href="documentation.html#blocks"><i class="fa fa-check"></i><b>4.4.7</b> Blocks</a></li>
+<li class="chapter" data-level="4.4.8" data-path="documentation.html"><a href="documentation.html#adding-a-table-of-contents"><i class="fa fa-check"></i><b>4.4.8</b> Adding a table of contents</a></li>
+<li class="chapter" data-level="4.4.9" data-path="documentation.html"><a href="documentation.html#adding-references"><i class="fa fa-check"></i><b>4.4.9</b> Adding references</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="documentation.html"><a href="documentation.html#exercise-getting-started"><i class="fa fa-check"></i><b>4.5</b> Exercise: Getting started</a></li>
+<li class="chapter" data-level="4.6" data-path="documentation.html"><a href="documentation.html#r-code-chunks"><i class="fa fa-check"></i><b>4.6</b> R code chunks</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="documentation.html"><a href="documentation.html#chunk-names"><i class="fa fa-check"></i><b>4.6.1</b> Chunk names</a></li>
+<li class="chapter" data-level="4.6.2" data-path="documentation.html"><a href="documentation.html#chunk-options"><i class="fa fa-check"></i><b>4.6.2</b> Chunk options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="documentation.html"><a href="documentation.html#tables"><i class="fa fa-check"></i><b>4.7</b> Tables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="documentation.html"><a href="documentation.html#manually-creating-tables"><i class="fa fa-check"></i><b>4.7.1</b> Manually creating tables</a></li>
+<li class="chapter" data-level="4.7.2" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-rmarkdown"><i class="fa fa-check"></i><b>4.7.2</b> Dynamic tables using <code>rmarkdown</code></a></li>
+<li class="chapter" data-level="4.7.3" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-kableextra"><i class="fa fa-check"></i><b>4.7.3</b> Dynamic tables using <code>kableExtra</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="documentation.html"><a href="documentation.html#composing-figures-with-patchwork"><i class="fa fa-check"></i><b>4.8</b> Composing figures with <code>patchwork</code></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="documentation.html"><a href="documentation.html#adding-plots-together"><i class="fa fa-check"></i><b>4.8.1</b> Adding plots together</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="documentation.html"><a href="documentation.html#exercise-writing-a-short-report"><i class="fa fa-check"></i><b>4.9</b> Exercise: Writing a short report</a></li>
+<li class="chapter" data-level="4.10" data-path="documentation.html"><a href="documentation.html#r-markdown-limitations"><i class="fa fa-check"></i><b>4.10</b> R Markdown limitations</a></li>
+<li class="chapter" data-level="4.11" data-path="documentation.html"><a href="documentation.html#key-points-2"><i class="fa fa-check"></i><b>4.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>5</b> Version control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="version-control.html"><a href="version-control.html#objectives-3"><i class="fa fa-check"></i><b>5.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="version-control.html"><a href="version-control.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="version-control.html"><a href="version-control.html#centralised-version-control-systems"><i class="fa fa-check"></i><b>5.3</b> Centralised version control systems</a></li>
+<li class="chapter" data-level="5.4" data-path="version-control.html"><a href="version-control.html#distributed-version-control-systems"><i class="fa fa-check"></i><b>5.4</b> Distributed version control systems</a></li>
+<li class="chapter" data-level="5.5" data-path="version-control.html"><a href="version-control.html#git-workflow"><i class="fa fa-check"></i><b>5.5</b> Git workflow</a></li>
+<li class="chapter" data-level="5.6" data-path="version-control.html"><a href="version-control.html#branches"><i class="fa fa-check"></i><b>5.6</b> Branches</a></li>
+<li class="chapter" data-level="5.7" data-path="version-control.html"><a href="version-control.html#files-under-version-control"><i class="fa fa-check"></i><b>5.7</b> Files under version control</a></li>
+<li class="chapter" data-level="5.8" data-path="version-control.html"><a href="version-control.html#glossary"><i class="fa fa-check"></i><b>5.8</b> Glossary</a></li>
+<li class="chapter" data-level="5.9" data-path="version-control.html"><a href="version-control.html#key-points-3"><i class="fa fa-check"></i><b>5.9</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-1.html"><a href="github-1.html"><i class="fa fa-check"></i><b>6</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-1.html"><a href="github-1.html#objectives-4"><i class="fa fa-check"></i><b>6.1</b> Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="github-1.html"><a href="github-1.html#starting-on-github"><i class="fa fa-check"></i><b>6.2</b> Starting on GitHub</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="github-1.html"><a href="github-1.html#creating-a-new-repository"><i class="fa fa-check"></i><b>6.2.1</b> Creating a new repository</a></li>
+<li class="chapter" data-level="6.2.2" data-path="github-1.html"><a href="github-1.html#deleting-a-repository"><i class="fa fa-check"></i><b>6.2.2</b> Deleting a repository</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="github-1.html"><a href="github-1.html#exercise-new-repository"><i class="fa fa-check"></i><b>6.3</b> Exercise: New repository</a></li>
+<li class="chapter" data-level="6.4" data-path="github-1.html"><a href="github-1.html#creating-a-new-file-optional"><i class="fa fa-check"></i><b>6.4</b> Creating a new file (optional)</a></li>
+<li class="chapter" data-level="6.5" data-path="github-1.html"><a href="github-1.html#create-branch"><i class="fa fa-check"></i><b>6.5</b> Creating a new branch (optional)</a></li>
+<li class="chapter" data-level="6.6" data-path="github-1.html"><a href="github-1.html#pull-requests"><i class="fa fa-check"></i><b>6.6</b> Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.7" data-path="github-1.html"><a href="github-1.html#exercise-pull-requests-optional"><i class="fa fa-check"></i><b>6.7</b> Exercise: Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.8" data-path="github-1.html"><a href="github-1.html#forking-projects"><i class="fa fa-check"></i><b>6.8</b> Forking projects</a></li>
+<li class="chapter" data-level="6.9" data-path="github-1.html"><a href="github-1.html#creating-issues"><i class="fa fa-check"></i><b>6.9</b> Creating issues</a></li>
+<li class="chapter" data-level="6.10" data-path="github-1.html"><a href="github-1.html#managing-access"><i class="fa fa-check"></i><b>6.10</b> Managing access</a></li>
+<li class="chapter" data-level="6.11" data-path="github-1.html"><a href="github-1.html#key-points-4"><i class="fa fa-check"></i><b>6.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html"><i class="fa fa-check"></i><b>7</b> GitHub and RStudio</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#objectives-5"><i class="fa fa-check"></i><b>7.1</b> Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#using-github-from-rstudio"><i class="fa fa-check"></i><b>7.2</b> Using GitHub from RStudio</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#linking-git-and-rstudio"><i class="fa fa-check"></i><b>7.2.1</b> Linking Git and RStudio</a></li>
+<li class="chapter" data-level="7.2.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#starting-a-new-project-under-git-control"><i class="fa fa-check"></i><b>7.2.2</b> Starting a new project under Git control</a></li>
+<li class="chapter" data-level="7.2.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#changes-and-your-remote-repository"><i class="fa fa-check"></i><b>7.2.3</b> Changes and your remote repository</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-version-control-in-rstudio"><i class="fa fa-check"></i><b>7.3</b> Exercise: Version control in RStudio</a></li>
+<li class="chapter" data-level="7.4" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-branching-and-changes"><i class="fa fa-check"></i><b>7.4</b> Exercise: Branching and changes</a></li>
+<li class="chapter" data-level="7.5" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#key-points-5"><i class="fa fa-check"></i><b>7.5</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducibility without fuss</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="version-control" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Version control<a href="version-control.html#version-control" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objectives-3" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Objectives<a href="version-control.html#objectives-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<ul>
+<li>Understand different ways to deal with versions of data</li>
+<li>Understand the workflow for Git</li>
+<li>Know about when branches might be helpful</li>
+</ul>
+</div>
+</div>
+<div id="introduction-1" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Introduction<a href="version-control.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I would imagine that most people here will have found themselves in this situation before:</p>
+<p><img src="img/phdcomic.png" width="75%" style="display: block; margin: auto;" /></p>
+<p>I certainly have! And over the years I’ve tried different ways of organising revisions. For documents it works quite well to start your document title with a date, for example <code>2020-04-05_Project_analysis.docx</code> so that a new version would have a more recent data, such as <code>2020-05-08_Project_analysis.docx</code>. That way your revisions are organised in chronological order.</p>
+<p>If you are working with multiple people on the same document you can add initials to the end, e.g. <code>2020-04-05_Project_analysis_JD.docx</code>, so you know who has reviewed/commented on the document. You can then merge documents within MS Word, if you’re using that.</p>
+<p>More recently, I’ve become a fan of <a href="https://www.google.co.uk/docs/about/">Google Docs</a>, which provides much of the functionality of MS Office, but allows you to work remotely on a document with other people. Changes are registered in its <strong>History</strong> and you can go back through time.</p>
+<p>All this works reasonably well for documents, but this is less suitable for code, where changes are made often and have clear consequences on the workings of the code further down. This gets us to the topic of <strong>version control systems</strong>, of which <a href="https://git-scm.com">Git</a> is one.</p>
+<p>Git allows you to keep track of changes to your code <em>and</em> share those changes with others. It works particularly well when used in conjunction with <a href="https://github.com">GitHub</a>, a website that enables sharing your code with others.</p>
+<p>In general, there are two different types of version control systems: <strong>centralised</strong> and <strong>distributed</strong>. Both types of version control systems their changes in a database, called a <strong>repository</strong>. All work is done on a personal copy, called a <strong>working copy</strong>. We’ll briefly go through the differences between how these two systems function in this context.</p>
+</div>
+<div id="centralised-version-control-systems" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Centralised version control systems<a href="version-control.html#centralised-version-control-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The centralised version control system has just one centralised repository. Each user has its own working copy to which changes are made. These changes are then communicated with the central server that holds the (centralised) repository. You commit your changes to the server, other users update and can directly see your changes.</p>
+<p><img src="img/centralised-vcs.png" width="260" /></p>
+<p>Image by <a href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">Michael Ernst</a>.</p>
+</div>
+<div id="distributed-version-control-systems" class="section level2 hasAnchor" number="5.4">
+<h2><span class="header-section-number">5.4</span> Distributed version control systems<a href="version-control.html#distributed-version-control-systems" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The distributed version control system works a little different, where each user not only has their own working copy, but also their own repository. You commit your changes to your repository but other people cannot see those changes yet. For that to happen you need to push your changes to the central repository. You do not get other people’s changes, unless you specifically pull those changes into your own repository.</p>
+<p><img src="img/distributed-vcs.png" width="296" /></p>
+<p>Image by <a href="https://homes.cs.washington.edu/~mernst/advice/version-control.html">Michael Ernst</a>.</p>
+<p>Here we will be using <strong>Git</strong>, which is a distributed version control system. Version control with Git works differently to all other version control systems in the way that it views the data. Whereas other version control systems store information as <strong>changes to a base version</strong> of a file (thus tracking how a file changes over time), Git stores data <strong>as a snapshot of the project</strong> over time. If a file has changed then Git stores the file again and if a file is unchanged then it links to the original, unchanged file.</p>
+<p>As such, Git can be thought of as a <a href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">mini file system</a>.</p>
+</div>
+<div id="git-workflow" class="section level2 hasAnchor" number="5.5">
+<h2><span class="header-section-number">5.5</span> Git workflow<a href="version-control.html#git-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although Git can work entirely local, it is usually used in conjunction with a remote storage - in our case GitHub.</p>
+<p>You have a <strong>working directory</strong> on your computer that contains all the files that you are working on. There is also a <strong>local repository</strong> inside your working directory that contains an object database with all the versions of the files, changes, commits etc. associated with your files. Lastly, there usually is a <strong>remote repository</strong> that contains a copy of your local files and local repository. In our case, this remote repository is on GitHub.</p>
+<p>GitHub needs to know which files to track, which are added to the <strong>index</strong>. These files are staged for a <strong>commit</strong>, which creates a snapshot of your files in time. The commit is always accompanied by a message that explains what the changes are that are being committed.</p>
+<p>When you are happy with the commit you’ve made on your (local) computer, then you can <strong>push</strong> these changes to your remote repository on GitHub and it will be updated.</p>
+<p><img src="img/git_workflow.png" width="1082" /></p>
+<p>The image was adapted from the <a href="https://i.redd.it/8341g68g1v7y.png">RebelLabs Git Cheat Sheet</a>.</p>
+</div>
+<div id="branches" class="section level2 hasAnchor" number="5.6">
+<h2><span class="header-section-number">5.6</span> Branches<a href="version-control.html#branches" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If you are working on something by yourself then you’re able to judge whether or not you want to push any changes to your remote repository. Things get a bit more complicated when you are working in a team, because multiple people could work on the same file and the changes you push could affect others. The way GitHub deals with this is through the use of <strong>branches</strong>.</p>
+<p>Simply put, a branch is a copy of your repository where you can safely make changes/experiment without worrying how these changes might affect others.</p>
+<p>There can be many different branches in your repository, but only one can be deployed: the <code>master</code> branch. So if you are making changes and push them to the <code>master</code> branch then they are immediately implemented.</p>
+<p>We will learn how to <a href="github-1.html#create-branch">create branches</a> later.</p>
+<p>Below is a schematic overview of the process you go through on GitHub.</p>
+<p><img src="img/github_workflow.png" width="1014" /></p>
+<p>Image adapted from <a href="https://guides.github.com/introduction/flow/">the GitHub guide</a>.</p>
+</div>
+<div id="files-under-version-control" class="section level2 hasAnchor" number="5.7">
+<h2><span class="header-section-number">5.7</span> Files under version control<a href="version-control.html#files-under-version-control" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>When you are using version control, you probably do not want to put every file and folder in your working directory under version control. After all, your working (or project) folder will likely contain binary files, such as text documents or presentations, and data that you want to keep separate.</p>
+<p>Data can take up lots of space and GitHub is not the place to store these files - it really is intended for code. Data associated with publications is usually shared via dedicated data repositories, such as <a href="https://www.repository.cam.ac.uk">Apollo - University of Cambridge Repository</a>.</p>
+<p>But only putting part of the files under version control means that we need to tell git which files to keep track of, or not. It does so with a <code>gitignore</code> file, where we tell git which files to ignore.</p>
+<p>In a little while we’ll be creating our own repository on GitHub and there you have the option to add a <code>.gitignore</code> file from the start. However, I tend to forego on that, and let RStudio create one once I link a repository to RStudio (more on that later). You can add files and folders to a <code>.gitignore</code> file, and it might look something like this:</p>
+<pre><code>.Rproj
+.RData
+data
+documents</code></pre>
+</div>
+<div id="glossary" class="section level2 hasAnchor" number="5.8">
+<h2><span class="header-section-number">5.8</span> Glossary<a href="version-control.html#glossary" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The variety of phrases used in both types of version control systems can be a little overwhelming at times. Below is a non-exhaustive list of phrases you might come across. The glossary is an adapted version from <a href="https://linuxacademy.com/blog/linux/git-terms-explained/">here</a>.</p>
+<ul>
+<li><strong>branch</strong> a version of the repository that diverges from the main working project. Used to explore/test new features or make changes.</li>
+<li><strong>clone</strong> a copy of a repository.</li>
+<li><strong>commit</strong> stores the contents of the index (the staging area of Git) in a new commit. Needs to be provided with a commit message that explains what the changes are.</li>
+<li><strong>fetch</strong> downloading and copying the files of a particular branch to your computer.</li>
+<li><strong>fork</strong> creates a personal copy of somebody else’s repository.</li>
+<li><strong>index</strong> working or staging area of Git. This is where files that have been changed/added/deleted are kept until you are ready to commit the files.</li>
+<li><strong>master</strong> the primary branch of all repositories.</li>
+<li><strong>merge</strong> takes the changes from one branch and adds them to another (usually the <code>master</code> branch). These commits are normally first requested via a pull request.</li>
+<li><strong>origin</strong> is the conventional name for the primary version of a repository. Git uses <code>origin</code> as a system alias for pushing and fetching data to and from the primary branch.</li>
+<li><strong>pull</strong> or <strong>pull request</strong> a term used in GitHub to let people know you’ve pushed changes into a branch of the repository. These changes can then be reviewed by the repository maintainer and can be merged.</li>
+<li><strong>push</strong> updates a remote branch with the commits made to the current branch. You are <em>pushing</em> your changes onto the remote.</li>
+<li><strong>remote</strong> a copy of the original branch. When you clone a branch, that new branch is a remote, or <em>clone</em>.</li>
+<li><strong>repository</strong> In many ways, you can think of a Git repository as a directory that stores all the files, folders, and content needed for your project. What it actually is, is the object database of the project, storing everything from the files themselves, to the versions of those files, commits, deletions, et cetera. Repositories are not limited by user, and can be shared and copied.</li>
+<li><strong>upstream</strong> While there is not necessarily a default “upstream” or “downstream” for Git projects, upstream can be considered where you push your Git changes — this is often the master branch of the project within the origin</li>
+</ul>
+</div>
+<div id="key-points-3" class="section level2 hasAnchor" number="5.9">
+<h2><span class="header-section-number">5.9</span> Key points<a href="version-control.html#key-points-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="keypoints">
+<ul>
+<li>Version control can be centralised on a server, or distributed with a local copy of a repository</li>
+<li>The git model is distributed, with a local repository that can be linked to an online remote repository</li>
+<li>GitHub is an online platform for remote repositories, allowing easy sharing of and collaborations on repositories</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="documentation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="github-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

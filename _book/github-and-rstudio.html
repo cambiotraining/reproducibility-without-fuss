@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 GitHub and RStudio | Reproducibility without fuss</title>
+  <meta name="description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 GitHub and RStudio | Reproducibility without fuss" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 GitHub and RStudio | Reproducibility without fuss" />
+  
+  <meta name="twitter:description" content="These are the supporting materials for the Reproducibility without fuss course, Bioinformatics Training Facility, Cambridge University." />
+  
+
+<meta name="author" content="Martin van Rongen" />
+
+
+<meta name="date" content="2023-07-24" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="github-1.html"/>
+<link rel="next" href="references.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#objectives"><i class="fa fa-check"></i><b>1.1</b> Objectives</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#purpose-and-aim"><i class="fa fa-check"></i><b>1.2</b> Purpose and aim</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#causes-of-irreproducibility"><i class="fa fa-check"></i><b>1.3</b> Causes of irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="index.html"><a href="index.html#not-a-true-result"><i class="fa fa-check"></i><b>1.3.1</b> Not a true result</a></li>
+<li class="chapter" data-level="1.3.2" data-path="index.html"><a href="index.html#insufficient-information"><i class="fa fa-check"></i><b>1.3.2</b> Insufficient information</a></li>
+<li class="chapter" data-level="1.3.3" data-path="index.html"><a href="index.html#issues-with-replication"><i class="fa fa-check"></i><b>1.3.3</b> Issues with replication</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#solutions-to-irreproducibility"><i class="fa fa-check"></i><b>1.4</b> Solutions to irreproducibility</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="index.html"><a href="index.html#the-right-stuff"><i class="fa fa-check"></i><b>1.4.1</b> The right stuff</a></li>
+<li class="chapter" data-level="1.4.2" data-path="index.html"><a href="index.html#making-reproducing-easy"><i class="fa fa-check"></i><b>1.4.2</b> Making reproducing easy</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#forensic-science"><i class="fa fa-check"></i><b>1.5</b> Exercise: forensic science</a></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#key-points"><i class="fa fa-check"></i><b>1.6</b> Key points</a></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#authors-and-materials"><i class="fa fa-check"></i><b>1.7</b> Authors and materials</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="installation-instructions.html"><a href="installation-instructions.html"><i class="fa fa-check"></i><b>2</b> Installation instructions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="installation-instructions.html"><a href="installation-instructions.html#install-rstudio"><i class="fa fa-check"></i><b>2.1</b> Install RStudio</a></li>
+<li class="chapter" data-level="2.2" data-path="installation-instructions.html"><a href="installation-instructions.html#github"><i class="fa fa-check"></i><b>2.2</b> GitHub</a></li>
+<li class="chapter" data-level="2.3" data-path="installation-instructions.html"><a href="installation-instructions.html#git-software"><i class="fa fa-check"></i><b>2.3</b> Git software</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organisation.html"><a href="organisation.html"><i class="fa fa-check"></i><b>3</b> Organisation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organisation.html"><a href="organisation.html#objectives-1"><i class="fa fa-check"></i><b>3.1</b> Objectives</a></li>
+<li class="chapter" data-level="3.2" data-path="organisation.html"><a href="organisation.html#exercise-tidy-forensic-science"><i class="fa fa-check"></i><b>3.2</b> Exercise: tidy forensic science</a></li>
+<li class="chapter" data-level="3.3" data-path="organisation.html"><a href="organisation.html#exercise-me-me-me"><i class="fa fa-check"></i><b>3.3</b> Exercise: Me, me, me!</a></li>
+<li class="chapter" data-level="3.4" data-path="organisation.html"><a href="organisation.html#key-points-1"><i class="fa fa-check"></i><b>3.4</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="documentation.html"><a href="documentation.html"><i class="fa fa-check"></i><b>4</b> Documentation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="documentation.html"><a href="documentation.html#objectives-2"><i class="fa fa-check"></i><b>4.1</b> Objectives</a></li>
+<li class="chapter" data-level="4.2" data-path="documentation.html"><a href="documentation.html#libraries"><i class="fa fa-check"></i><b>4.2</b> Libraries</a></li>
+<li class="chapter" data-level="4.3" data-path="documentation.html"><a href="documentation.html#rmarkdown"><i class="fa fa-check"></i><b>4.3</b> RMarkdown</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="documentation.html"><a href="documentation.html#r-markdown-header"><i class="fa fa-check"></i><b>4.3.1</b> R Markdown header</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="documentation.html"><a href="documentation.html#markdown-header"><i class="fa fa-check"></i><b>4.4</b> Markdown</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="documentation.html"><a href="documentation.html#headings"><i class="fa fa-check"></i><b>4.4.1</b> Headings</a></li>
+<li class="chapter" data-level="4.4.2" data-path="documentation.html"><a href="documentation.html#inline-text-formatting"><i class="fa fa-check"></i><b>4.4.2</b> Inline text formatting</a></li>
+<li class="chapter" data-level="4.4.3" data-path="documentation.html"><a href="documentation.html#line-breaks"><i class="fa fa-check"></i><b>4.4.3</b> Line breaks</a></li>
+<li class="chapter" data-level="4.4.4" data-path="documentation.html"><a href="documentation.html#links"><i class="fa fa-check"></i><b>4.4.4</b> Links</a></li>
+<li class="chapter" data-level="4.4.5" data-path="documentation.html"><a href="documentation.html#lists"><i class="fa fa-check"></i><b>4.4.5</b> Lists</a></li>
+<li class="chapter" data-level="4.4.6" data-path="documentation.html"><a href="documentation.html#inserting-images"><i class="fa fa-check"></i><b>4.4.6</b> Inserting images</a></li>
+<li class="chapter" data-level="4.4.7" data-path="documentation.html"><a href="documentation.html#blocks"><i class="fa fa-check"></i><b>4.4.7</b> Blocks</a></li>
+<li class="chapter" data-level="4.4.8" data-path="documentation.html"><a href="documentation.html#adding-a-table-of-contents"><i class="fa fa-check"></i><b>4.4.8</b> Adding a table of contents</a></li>
+<li class="chapter" data-level="4.4.9" data-path="documentation.html"><a href="documentation.html#adding-references"><i class="fa fa-check"></i><b>4.4.9</b> Adding references</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="documentation.html"><a href="documentation.html#exercise-getting-started"><i class="fa fa-check"></i><b>4.5</b> Exercise: Getting started</a></li>
+<li class="chapter" data-level="4.6" data-path="documentation.html"><a href="documentation.html#r-code-chunks"><i class="fa fa-check"></i><b>4.6</b> R code chunks</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="documentation.html"><a href="documentation.html#chunk-names"><i class="fa fa-check"></i><b>4.6.1</b> Chunk names</a></li>
+<li class="chapter" data-level="4.6.2" data-path="documentation.html"><a href="documentation.html#chunk-options"><i class="fa fa-check"></i><b>4.6.2</b> Chunk options</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="documentation.html"><a href="documentation.html#tables"><i class="fa fa-check"></i><b>4.7</b> Tables</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="documentation.html"><a href="documentation.html#manually-creating-tables"><i class="fa fa-check"></i><b>4.7.1</b> Manually creating tables</a></li>
+<li class="chapter" data-level="4.7.2" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-rmarkdown"><i class="fa fa-check"></i><b>4.7.2</b> Dynamic tables using <code>rmarkdown</code></a></li>
+<li class="chapter" data-level="4.7.3" data-path="documentation.html"><a href="documentation.html#dynamic-tables-using-kableextra"><i class="fa fa-check"></i><b>4.7.3</b> Dynamic tables using <code>kableExtra</code></a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="documentation.html"><a href="documentation.html#composing-figures-with-patchwork"><i class="fa fa-check"></i><b>4.8</b> Composing figures with <code>patchwork</code></a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="documentation.html"><a href="documentation.html#adding-plots-together"><i class="fa fa-check"></i><b>4.8.1</b> Adding plots together</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="documentation.html"><a href="documentation.html#exercise-writing-a-short-report"><i class="fa fa-check"></i><b>4.9</b> Exercise: Writing a short report</a></li>
+<li class="chapter" data-level="4.10" data-path="documentation.html"><a href="documentation.html#r-markdown-limitations"><i class="fa fa-check"></i><b>4.10</b> R Markdown limitations</a></li>
+<li class="chapter" data-level="4.11" data-path="documentation.html"><a href="documentation.html#key-points-2"><i class="fa fa-check"></i><b>4.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="version-control.html"><a href="version-control.html"><i class="fa fa-check"></i><b>5</b> Version control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="version-control.html"><a href="version-control.html#objectives-3"><i class="fa fa-check"></i><b>5.1</b> Objectives</a></li>
+<li class="chapter" data-level="5.2" data-path="version-control.html"><a href="version-control.html#introduction-1"><i class="fa fa-check"></i><b>5.2</b> Introduction</a></li>
+<li class="chapter" data-level="5.3" data-path="version-control.html"><a href="version-control.html#centralised-version-control-systems"><i class="fa fa-check"></i><b>5.3</b> Centralised version control systems</a></li>
+<li class="chapter" data-level="5.4" data-path="version-control.html"><a href="version-control.html#distributed-version-control-systems"><i class="fa fa-check"></i><b>5.4</b> Distributed version control systems</a></li>
+<li class="chapter" data-level="5.5" data-path="version-control.html"><a href="version-control.html#git-workflow"><i class="fa fa-check"></i><b>5.5</b> Git workflow</a></li>
+<li class="chapter" data-level="5.6" data-path="version-control.html"><a href="version-control.html#branches"><i class="fa fa-check"></i><b>5.6</b> Branches</a></li>
+<li class="chapter" data-level="5.7" data-path="version-control.html"><a href="version-control.html#files-under-version-control"><i class="fa fa-check"></i><b>5.7</b> Files under version control</a></li>
+<li class="chapter" data-level="5.8" data-path="version-control.html"><a href="version-control.html#glossary"><i class="fa fa-check"></i><b>5.8</b> Glossary</a></li>
+<li class="chapter" data-level="5.9" data-path="version-control.html"><a href="version-control.html#key-points-3"><i class="fa fa-check"></i><b>5.9</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github-1.html"><a href="github-1.html"><i class="fa fa-check"></i><b>6</b> GitHub</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="github-1.html"><a href="github-1.html#objectives-4"><i class="fa fa-check"></i><b>6.1</b> Objectives</a></li>
+<li class="chapter" data-level="6.2" data-path="github-1.html"><a href="github-1.html#starting-on-github"><i class="fa fa-check"></i><b>6.2</b> Starting on GitHub</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="github-1.html"><a href="github-1.html#creating-a-new-repository"><i class="fa fa-check"></i><b>6.2.1</b> Creating a new repository</a></li>
+<li class="chapter" data-level="6.2.2" data-path="github-1.html"><a href="github-1.html#deleting-a-repository"><i class="fa fa-check"></i><b>6.2.2</b> Deleting a repository</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="github-1.html"><a href="github-1.html#exercise-new-repository"><i class="fa fa-check"></i><b>6.3</b> Exercise: New repository</a></li>
+<li class="chapter" data-level="6.4" data-path="github-1.html"><a href="github-1.html#creating-a-new-file-optional"><i class="fa fa-check"></i><b>6.4</b> Creating a new file (optional)</a></li>
+<li class="chapter" data-level="6.5" data-path="github-1.html"><a href="github-1.html#create-branch"><i class="fa fa-check"></i><b>6.5</b> Creating a new branch (optional)</a></li>
+<li class="chapter" data-level="6.6" data-path="github-1.html"><a href="github-1.html#pull-requests"><i class="fa fa-check"></i><b>6.6</b> Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.7" data-path="github-1.html"><a href="github-1.html#exercise-pull-requests-optional"><i class="fa fa-check"></i><b>6.7</b> Exercise: Pull requests (optional)</a></li>
+<li class="chapter" data-level="6.8" data-path="github-1.html"><a href="github-1.html#forking-projects"><i class="fa fa-check"></i><b>6.8</b> Forking projects</a></li>
+<li class="chapter" data-level="6.9" data-path="github-1.html"><a href="github-1.html#creating-issues"><i class="fa fa-check"></i><b>6.9</b> Creating issues</a></li>
+<li class="chapter" data-level="6.10" data-path="github-1.html"><a href="github-1.html#managing-access"><i class="fa fa-check"></i><b>6.10</b> Managing access</a></li>
+<li class="chapter" data-level="6.11" data-path="github-1.html"><a href="github-1.html#key-points-4"><i class="fa fa-check"></i><b>6.11</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html"><i class="fa fa-check"></i><b>7</b> GitHub and RStudio</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#objectives-5"><i class="fa fa-check"></i><b>7.1</b> Objectives</a></li>
+<li class="chapter" data-level="7.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#using-github-from-rstudio"><i class="fa fa-check"></i><b>7.2</b> Using GitHub from RStudio</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#linking-git-and-rstudio"><i class="fa fa-check"></i><b>7.2.1</b> Linking Git and RStudio</a></li>
+<li class="chapter" data-level="7.2.2" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#starting-a-new-project-under-git-control"><i class="fa fa-check"></i><b>7.2.2</b> Starting a new project under Git control</a></li>
+<li class="chapter" data-level="7.2.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#changes-and-your-remote-repository"><i class="fa fa-check"></i><b>7.2.3</b> Changes and your remote repository</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-version-control-in-rstudio"><i class="fa fa-check"></i><b>7.3</b> Exercise: Version control in RStudio</a></li>
+<li class="chapter" data-level="7.4" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#exercise-branching-and-changes"><i class="fa fa-check"></i><b>7.4</b> Exercise: Branching and changes</a></li>
+<li class="chapter" data-level="7.5" data-path="github-and-rstudio.html"><a href="github-and-rstudio.html#key-points-5"><i class="fa fa-check"></i><b>7.5</b> Key points</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>8</b> References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Reproducibility without fuss</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="github-and-rstudio" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> GitHub and RStudio<a href="github-and-rstudio.html#github-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objectives-5" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Objectives<a href="github-and-rstudio.html#objectives-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="objectives">
+<ul>
+<li>Link an RStudio project with GitHub</li>
+<li>Create and edit files in RStudio</li>
+<li>Commit and push changes to GitHub</li>
+</ul>
+</div>
+</div>
+<div id="using-github-from-rstudio" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Using GitHub from RStudio<a href="github-and-rstudio.html#using-github-from-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Although you can do more or less all the version control aspects via the GitHub website, this is not very convenient when you are working on your R projects. Now you have an idea of how the GitHub workflow works, we can start to integrate these version control concepts with RStudio.</p>
+<div id="linking-git-and-rstudio" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Linking Git and RStudio<a href="github-and-rstudio.html#linking-git-and-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use Git from within RStudio you need to make sure that Git can be found by RStudio.</p>
+<p>If you haven’t done so already, make sure to go to: <code>Tools</code> &gt; <code>Global Options</code> &gt; <code>Git/SVN</code> and check that ’Enable version control interface for RStudio projects` is enabled. Also, check that the path to Git is present and correct.</p>
+<p><img src="img/git_options_rstudio.png" width="592" /></p>
+</div>
+<div id="starting-a-new-project-under-git-control" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Starting a new project under Git control<a href="github-and-rstudio.html#starting-a-new-project-under-git-control" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you want version control of your R project, you need to make sure that the project is under control of Git.</p>
+<p>The easiest way to start this is by creating a <strong>new project</strong> that is <strong>linked to an existing GitHub repository</strong>.</p>
+<p>We can link a new project to the GitHub repository that we generated previously. To do this, we need to copy the URL for this repository. To do this, you have to go to the repository page and click on the <code>Clone or download</code> button. You can then copy the URL as shown below:</p>
+<p><img src="img/git_rstudio_01.png" width="794" /></p>
+<p>Next, we need to create a new project. Go to <code>File</code> &gt; <code>New Project</code> &gt; <code>Version Control</code> &gt; <code>Git</code>.</p>
+<p><img src="img/git_rstudio_02.png" width="564" /></p>
+<p><img src="img/git_rstudio_03.png" width="567" /></p>
+<p>In <code>Repository URL</code> paste the link to your GitHub repository.
+Give the project a name (avoid spaces and try to use a meaningful name) and tell RStudio where to save it.</p>
+<p><img src="img/git_rstudio_04.png" width="564" /></p>
+<div class="note">
+<p>It is useful to tick the <code>Open in a new session</code> box, so that your project opens in a new RStudio session. That way RStudio opens a session with a clean environment.</p>
+</div>
+<p>Your project will open and your RStudio session should now have an extra tab in the top right corner (where your Environment is), named <code>Git</code>. This is where all the changes will show up as you work on your project.</p>
+<p><img src="img/git_rstudio_05.png" width="1392" /></p>
+<p>These options can also be found by using the
+<img src="img/git_toolbar_button.png" width="38" />
+button in the toolbar. When you have opened a file and look at the options under this button it also enables you to find differences from the last commit (if there are any) or view the commit history of that file.</p>
+<p><img src="img/git_rstudio_06.png" width="1392" /></p>
+</div>
+<div id="changes-and-your-remote-repository" class="section level3 hasAnchor" number="7.2.3">
+<h3><span class="header-section-number">7.2.3</span> Changes and your remote repository<a href="github-and-rstudio.html#changes-and-your-remote-repository" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s make some changes to our local repository, which is now under Git control. Here we are first creating a folder called <code>notebooks</code> and adding an R Markdown file named <code>01_import_and_clean_data.Rmd</code>.</p>
+<p>Once you have created the file you’ll see the folder appearing in the <code>Git</code> tab. When you tick the <code>Staged</code> box, the <code>Status</code> changes to Added. This means that Git is tracking your file and will include it in the next commit.</p>
+<p><img src="img/git_rstudio_untracked_changes.png" width="425" /></p>
+<p><img src="img/git_rstudio_tracked_changes.png" width="428" /></p>
+<p>There are a few other icons that can appear in the Git pane, so here is an overview:</p>
+<ul>
+<li><img src="img/rstudio_untracked_button.png" width="15" />
+, <strong>untracked</strong> file. Git has not seen this before and it needs to be added before changes are tracked.</li>
+<li><img src="img/rstudio_added_button.png" width="16" />
+, <strong>added</strong> file. The file is now tracked by Git.</li>
+<li><img src="img/rstudio_modified_button.png" width="15" />
+, <strong>modified</strong> file. The file has been modified since the last commit.</li>
+<li><img src="img/rstudio_deleted_button.png" width="16" />
+, <strong>deleted</strong> file. The file has been deleted since the last commit.</li>
+</ul>
+<p>When we edit the file a bit we can see how it changed by clicking on the <code>Diff</code> button in the <code>Git</code> toolbar.</p>
+<p><img src="img/git_rstudio_diff.png" width="1112" /></p>
+<p>If we are happy with the changes then we can commit them. You can do this by pressing the <code>Commit</code> button in the <code>Git</code> tab and adding a commit message. All the files that are staged will be included in that particular commit. If there are files that you do not want to commit yet then you can untick them before pressing the <code>Commit</code> button.</p>
+<p><img src="img/git_rstudio_commit.png" width="637" /></p>
+<p>To ensure that the changes end up on your remote repository you need to <strong>push</strong> the changes. To do this, press the <code>Push</code> button in the top right corner. RStudio will give you a message that the changes are pushed:</p>
+<p><img src="img/git_rstudio_push.png" width="635" /></p>
+</div>
+</div>
+<div id="exercise-version-control-in-rstudio" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Exercise: Version control in RStudio<a href="github-and-rstudio.html#exercise-version-control-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-8" class="exercise"><strong>Exercise 7.1  </strong></span>To get us going, we need to have a repository to play with. You can either use the repository you’ve created previously, or create a new one:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new repository on GitHub</li>
+<li>Create a new R Project under version control</li>
+<li>Link the R Project with the remote repository</li>
+</ol>
+</div>
+</div>
+<div id="exercise-branching-and-changes" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Exercise: Branching and changes<a href="github-and-rstudio.html#exercise-branching-and-changes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="exercise">
+<p><span id="exr:unlabeled-div-9" class="exercise"><strong>Exercise 7.2  </strong></span>Now we’ve got a project under version control we can practice what we’ll do if we want to create a new feature to our existing repository, but do not want to send that to the <code>main</code> branch (yet). To do this, we use the following steps:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new branch (e.g. <code>new_notebook</code> or anything that describes the feature you’re adding) from within RStudio. To do this, use the following button in the <code>Git</code> pane:
+<img src="img/new_branch_button.png" width="95" /></li>
+<li>Create a <code>notebooks</code> folder and save a new R Markdown file in it.</li>
+<li>Ensure that changes to the new file are tracked.</li>
+<li>Make some changes to the file and commit them.</li>
+<li>Push the changes to the remote repository.</li>
+</ol>
+</div>
+</div>
+<div id="key-points-5" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Key points<a href="github-and-rstudio.html#key-points-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="keypoints">
+<ul>
+<li>You can link repositories to RStudio by cloning them</li>
+<li>Once cloned and under version control, you can commit and push changes to the remote repository</li>
+</ul>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="github-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

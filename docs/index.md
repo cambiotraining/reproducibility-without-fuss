@@ -1,7 +1,7 @@
 --- 
 title: "Reproducibility without fuss"
 author: "Martin van Rongen"
-date: "2022-05-16"
+date: "2023-07-24"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
@@ -180,4 +180,12 @@ We have two images: `graph.png`, which seems to show that life expectancy (of wh
 
 * We can influence reproducibility at every stage of the scientific method, by documenting our hypotheses and thought processes that led to them; by providing clear experimental design guidance and methods; by making our data and data analysis available an interpretable to others and finally, by letting other peer-review our research.
 :::
+
+## Authors and materials
+
+Some ideas in Chapter 3 are based on unpublished materials from Matt Castle (Bioinformatics Training Facility, University of Cambridge).
+
+The materials in Chapters 4 and 5 borrow from and are based on existing materials by [Alexia Cardona](https://ac812.github.io/reproducibility-training/).
+
+Parts of Chapter 6 and 7 are used in [materials previously developed](https://mvanrongen.github.io/2020_Gates_Reproducibility/) by Martin van Rongen.
 
